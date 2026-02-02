@@ -25,7 +25,7 @@ export default function Hero() {
             transition={{ duration: 1 }}
           >
             <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6">
-              Engineering Digital Excellence for Ambitious Brands
+              Web design, Development & Digital Solutions for Ambitious Brands
             </h1>
             <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed">
               We design and develop high-performance digital platforms that

@@ -245,8 +245,8 @@ function Footer() {
               </div>
 
               <p className="text-gray-400 mt-6 text-sm">
-                Stay connected with Vertex Prime Digital for updates, offers, and
-                cleaning tips.
+                Stay connected with Vertex Prime Digital for web design & development
+                insights, digital strategy updates, and industry trends.
               </p>
             </div>
           </div>
