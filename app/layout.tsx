@@ -56,9 +56,9 @@ export default function RootLayout({
     ],
     sameAs: [
       "https://www.facebook.com/VertexPrimeDigital",
-      "https://twitter.com/VertexPrimeDigital",
+      "https://twitter.com/VDigital20184",
       "https://www.linkedin.com/company/vertexprimedigital",
-      "https://www.instagram.com/VertexPrimeDigital",
+      "https://www.instagram.com/vertexprimedigital",
     ],
   };
 
