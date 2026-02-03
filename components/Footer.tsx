@@ -122,12 +122,12 @@ function Footer() {
                 {/* Phone */}
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 text-[#C6A75E] mr-3" />
-                  <a
+                  <Link
                     href="tel:+2349038979339"
                     className="text-gray-300 hover:text-white transition"
                   >
                     +2349038979339
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Email */}

@@ -24,10 +24,10 @@ export default function About() {
             </h2>
 
             <p className="text-gray-700 mb-6 leading-relaxed">
-              At Vertex Prime Digital, we don’t just build websites — we engineer
-              high-performance digital experiences that position brands for
-              authority, growth, and long-term scalability. Every solution is
-              crafted with precision, strategy, and modern technology.
+              At Vertex Prime Digital, we don’t just build websites — we
+              engineer high-performance digital experiences that position brands
+              for authority, growth, and long-term scalability. Every solution
+              is crafted with precision, strategy, and modern technology.
             </p>
 
             <p className="text-gray-700 mb-8 leading-relaxed">
@@ -52,7 +52,9 @@ export default function About() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <img
+            <Image
+              width={650}
+              height={650}
               src="/yip.jpeg"
               alt="Vertex Prime Digital Web Development"
               className="rounded-2xl shadow-xl"

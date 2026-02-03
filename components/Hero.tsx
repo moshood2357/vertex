@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { Phone } from "lucide-react";
 // import Image from "next/image";
 // import { usePathname } from "next/navigation";
 // import { useState } from "react";
@@ -38,12 +40,13 @@ export default function Hero() {
               >
                 Request a Consultation
               </Link>
-              {/* <Link
-                href="#portfolio"
-                className="border border-white px-6 py-3 rounded-md hover:bg-white hover:text-[#0B1F3B] transition"
+              <Link
+                href="tel:+2349038979339"
+                className="border border-white px-6 py-3 rounded-md hover:bg-white hover:text-[#0B1F3B] transition block md:inline-flex items-center gap-2"
               >
-                View Our Work
-              </Link> */}
+                <Phone size={18} />
+                Call us now
+              </Link>
             </div>
           </motion.div>
 
@@ -54,7 +57,9 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <img
+              <Image
+                width={650}
+                height={650}
                 src="/landscape.png"
                 alt="Professional carpet cleaning team"
                 className="rounded-2xl shadow-xl"
