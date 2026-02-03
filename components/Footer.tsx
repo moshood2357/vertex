@@ -88,7 +88,7 @@
 import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 
-import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 import Link from "next/link";
 
@@ -217,7 +217,7 @@ function Footer() {
                 </a>
 
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/vertexprimedigital"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gray-800 p-3 rounded-full hover:bg-[#C6A75E] hover:text-black transition"
@@ -235,18 +235,19 @@ function Footer() {
                 </a>
 
                 <a
-                  href="https://linkedin.com"
+                  href="https://twitter.com/VDigital20184"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gray-800 p-3 rounded-full hover:bg-[#C6A75E] hover:text-black transition"
                 >
-                  <FaTiktok size={18} />
+                  <FaTwitter size={18} />
                 </a>
               </div>
 
               <p className="text-gray-400 mt-6 text-sm">
-                Stay connected with Vertex Prime Digital for web design & development
-                insights, digital strategy updates, and industry trends.
+                Stay connected with Vertex Prime Digital for web design &
+                development insights, digital strategy updates, and industry
+                trends.
               </p>
             </div>
           </div>
