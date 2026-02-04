@@ -9,26 +9,32 @@ export default function Services() {
     {
       title: "Website Development",
       desc: "High-performance, responsive websites engineered for scalability, speed, and business impact.",
+      href: "/services/website-development",
     },
     {
       title: "E-Commerce Solutions",
       desc: "Conversion-focused online stores built to maximise revenue and customer experience.",
+      href: "/services/ecommerce-solutions",
     },
     {
       title: "UI/UX Design",
       desc: "Strategic, user-centered interfaces crafted to increase engagement and retention.",
+      href: "/services/ui-ux-design",
     },
     {
       title: "SEO & Optimization",
       desc: "Data-driven visibility strategies that generate measurable growth and qualified traffic.",
+      href: "/services/seo-optimization",
     },
     {
       title: "Website Maintenance",
       desc: "Proactive monitoring, updates, and support to keep your digital assets secure and fast.",
+      href: "/services/website-maintenance",
     },
     {
       title: "Custom Digital Solutions",
       desc: "Tailored digital systems designed around your operational and growth objectives.",
+      href: "/services/custom-digital-solutions",
     },
   ];
 
@@ -62,7 +68,7 @@ export default function Services() {
         <div className="grid md:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <motion.div
-              key={index}
+              key={service.title}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -82,7 +88,7 @@ export default function Services() {
 
               <div className="relative z-10">
                 <Link
-                  href="/services"
+                  href={service.href}
                   className="inline-flex items-center text-[#C6A75E] font-medium hover:underline"
                 >
                   Learn More
