@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Vertex Prime Digital is a global web development and digital solutions agency delivering high-performance websites, e-commerce platforms, SEO, IT consulting, and scalable digital systems for businesses worldwide.",
+    "Vertex Prime Digital is a performance-driven web design and development agency helping ambitious brands in Lagos and globally build scalable, SEO-optimized digital systems and high-converting e-commerce platforms.",
 
   applicationName: "Vertex Prime Digital",
 
@@ -34,10 +34,19 @@ export const metadata: Metadata = {
     "Website Development Company",
     "Website design and development services",
     "Website design and development company",
+    "website design and development agency",
+    "digital agency in lagos",
+    "africa digital agency",
+    "web design and development company in nigeria",
+    "web design and development company in lagos",
+    "web design and development company in lagos nigeria",
     "website development agency Nigeria",
     "best web development company in Lagos",
+    "web design company near me",
+    "web development company near me",
     "affordable website design nigeria",
     "ecommerce website developers near me",
+    "Performance-Driven Web & E-commerce Development for Growing Businesses",
     "website development cost in Nigeria",
     "website development services for small business",
     "responsive website design for small businesses",
@@ -60,12 +69,21 @@ export const metadata: Metadata = {
     "SEO Services",
     "Web Development Lagos",
     "Digital Agency Nigeria",
+    "Digital Agency Lagos",
+    "top-notch web development services",
+    "custom web services in lagos",
+    "custom web services in nigeria",
     "Vertex Prime Digital",
   ],
 
   authors: [{ name: "Vertex Prime Digital" }],
   creator: "Vertex Prime Digital",
   publisher: "Vertex Prime Digital",
+
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
 
   robots: {
     index: true,
@@ -91,9 +109,9 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Vertex Prime Digital | Website Development & Digital Solutions Agency",
+      "Vertex Prime Digital | Website Design, Development & Digital Solutions Agency",
     description:
-      "Professional website development, e-commerce solutions, SEO, IT consulting, and digital transformation services tailored for modern businesses.",
+      "Professional website development, e-commerce solutions, SEO, and digital systems built for performance, scalability, and measurable business growth.",
     url: "https://www.vertexprimedigital.com",
     siteName: "Vertex Prime Digital",
     images: [
@@ -101,7 +119,7 @@ export const metadata: Metadata = {
         url: "/tagline1.jpg",
         width: 1200,
         height: 630,
-        alt: "Vertex Prime Digital - Web Design, Development & Digital Solutions",
+        alt: "Vertex Prime Digital - Web Design & Development Agency",
       },
     ],
     locale: "en_US",
@@ -110,14 +128,13 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Vertex Prime Digital | Website Design, Development & Digital Solutions",
+    title: "Vertex Prime Digital | Website Design & Digital Solutions Agency",
     description:
-      "Custom websites, e-commerce platforms, SEO, and IT solutions built for performance and growth.",
+      "Custom websites, scalable e-commerce platforms, SEO, and digital solutions built for ambitious brands.",
     images: ["/tagline1.jpg"],
   },
 
   category: "Digital Agency",
-
 
   other: {
     "theme-color": "#0B1F3B",
@@ -132,16 +149,21 @@ export default function RootLayout({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": ["Organization", "ProfessionalService"],
-    "@id": "https://www.vertexprimedigital.com/#business",
+    "@id": "https://www.vertexprimedigital.com/#organization",
     name: "Vertex Prime Digital",
     url: "https://www.vertexprimedigital.com",
     logo: "https://www.vertexprimedigital.com/nakedlogo.png",
     image: "https://www.vertexprimedigital.com/tagline1.jpg",
     description:
-      "Vertex Prime Digital is a global web development and digital solutions agency specializing in website design, e-commerce development, SEO, IT consulting, and digital transformation.",
+      "Vertex Prime Digital is a performance-driven web design and development agency delivering scalable digital systems, high-converting websites, and e-commerce platforms.",
+    email: "info@vertexprimedigital.com",
     foundingLocation: {
       "@type": "Place",
-      name: "Lagos, Nigeria",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Lagos",
+        addressCountry: "NG",
+      },
     },
     areaServed: {
       "@type": "Place",
@@ -213,7 +235,10 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {/* Structured Data */}
         <Script
           id="vertex-structured-data"
           type="application/ld+json"
@@ -225,9 +250,9 @@ export default function RootLayout({
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-EN90EKMNGW"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -235,11 +260,23 @@ export default function RootLayout({
             gtag('config', 'G-EN90EKMNGW');
           `}
         </Script>
-      </head>
 
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        {/* Tawk.to Live Chat */}
+        <Script id="tawk-to" strategy="afterInteractive">
+          {`
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+              var s1=document.createElement("script"),
+              s0=document.getElementsByTagName("script")[0];
+              s1.async=true;
+              s1.src='https://embed.tawk.to/698443eeb35c9b1c2f681075/1jgmaint8';
+              s1.charset='UTF-8';
+              s1.setAttribute('crossorigin','*');
+              s0.parentNode.insertBefore(s1,s0);
+            })();
+          `}
+        </Script>
+
         {children}
         <Toaster position="top-right" richColors />
       </body>

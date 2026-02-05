@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
               Privacy Policy
             </h1>
             <p className="text-slate-600 text-lg">
-              Effective Date: January 2026
+              Effective Date: February 2026
             </p>
           </motion.div>
         </section>
@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
                 1. Introduction
               </h2>
               <p>
-                Vertex Prime Digital ("we", "our", or "us") is committed to protecting
+                Vertex Prime Digital (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &rdquo;us&rdquo;) is committed to protecting
                 your privacy and handling your personal information with
                 transparency and integrity. This Privacy Policy explains how we
                 collect, use, disclose, and safeguard your information when you
@@ -207,7 +207,7 @@ export default function PrivacyPolicyPage() {
               <p className="mt-4 font-semibold">
                 Vertex Prime Digital
                 <br />
-                Email: info@vertexprimedigital.com
+                Email: contact@vertexprimedigital.com
                 <br />
                 Website: www.vertexprimedigital.com
               </p>
