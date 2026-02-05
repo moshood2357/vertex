@@ -31,11 +31,11 @@ export default function Services() {
       desc: "Proactive monitoring, updates, and support to keep your digital assets secure and fast.",
       href: "/services/website-maintenance",
     },
-    {
-      title: "Custom Digital Solutions",
-      desc: "Tailored digital systems designed around your operational and growth objectives.",
-      href: "/services/custom-digital-solutions",
-    },
+    // {
+    //   title: "Custom Digital Solutions",
+    //   desc: "Tailored digital systems designed around your operational and growth objectives.",
+    //   href: "/services/custom-digital-solutions",
+    // },
   ];
 
   return (

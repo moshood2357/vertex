@@ -208,7 +208,7 @@ function Footer() {
 
               <div className="flex space-x-4">
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/profile.php?id=61587406476323"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gray-800 p-3 rounded-full hover:bg-[#C6A75E] hover:text-black transition"
