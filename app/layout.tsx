@@ -128,7 +128,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Vertex Prime Digital | Website Design & Digital Solutions Agency",
+    title: "Vertex Prime Digital | Website Design, Development & Digital Solutions Agency",
     description:
       "Custom websites, scalable e-commerce platforms, SEO, and digital solutions built for ambitious brands.",
     images: ["/tagline4.png"],
@@ -184,7 +184,7 @@ export default function RootLayout({
       },
     ],
     sameAs: [
-      "https://www.facebook.com/VertexPrimeDigital",
+      "https://www.facebook.com/vertexprimedigital",
       "https://twitter.com/VDigital20184",
       "https://www.linkedin.com/company/vertexprimedigital",
       "https://www.instagram.com/vertexprimedigital",
