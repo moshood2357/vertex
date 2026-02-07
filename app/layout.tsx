@@ -116,7 +116,7 @@ export const metadata: Metadata = {
     siteName: "Vertex Prime Digital",
     images: [
       {
-        url: "/tagline1.jpg",
+        url: "/tagline4.png",
         width: 1200,
         height: 630,
         alt: "Vertex Prime Digital - Web Design & Development Agency",
@@ -131,7 +131,7 @@ export const metadata: Metadata = {
     title: "Vertex Prime Digital | Website Design & Digital Solutions Agency",
     description:
       "Custom websites, scalable e-commerce platforms, SEO, and digital solutions built for ambitious brands.",
-    images: ["/tagline1.jpg"],
+    images: ["/tagline4.png"],
   },
 
   category: "Digital Agency",
@@ -153,10 +153,10 @@ export default function RootLayout({
     name: "Vertex Prime Digital",
     url: "https://www.vertexprimedigital.com",
     logo: "https://www.vertexprimedigital.com/nakedlogo.png",
-    image: "https://www.vertexprimedigital.com/tagline1.jpg",
+    image: "https://www.vertexprimedigital.com/tagline4.png",
     description:
       "Vertex Prime Digital is a performance-driven web design and development agency delivering scalable digital systems, high-converting websites, and e-commerce platforms.",
-    email: "info@vertexprimedigital.com",
+    email: "contact@vertexprimedigital.com",
     foundingLocation: {
       "@type": "Place",
       address: {
