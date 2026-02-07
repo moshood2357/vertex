@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 export default function ServicesPage() {
   const services = [
     {
-      title: "Website Development",
+      title: "Website Design and Development",
       description:
         "We build high-performance, scalable websites tailored to your brand and business objectives.",
       features: [

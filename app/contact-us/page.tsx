@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Contact from "@/components/Contact";
 
 export const metadata: Metadata = {
-  title: "Contact Vertex Prime Digital | Web Design & Digital Solutions",
+  title: "Contact Vertex Prime Digital | Web Design, Development & Digital Solutions",
   description:
     "Get in touch with Vertex Prime Digital for professional web design, development, and digital solutions. Based in Lagos, Nigeria — serving clients worldwide.",
   keywords: [
