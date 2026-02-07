@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Vertex Prime Digital is a performance-driven web design and development agency helping brands in Lagos and globally build scalable, SEO-optimized digital systems and e-commerce platforms..",
+    "Vertex Prime Digital is a performance-driven web design and development agency helping ambitious brands in Lagos and globally build scalable, SEO-optimized digital systems and high-converting e-commerce platforms.",
 
   applicationName: "Vertex Prime Digital",
 
@@ -128,8 +128,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title:
-      "Vertex Prime Digital | Website Design, Development & Digital Solutions Agency",
+    title: "Vertex Prime Digital | Website Design, Development & Digital Solutions Agency",
     description:
       "Custom websites, scalable e-commerce platforms, SEO, and digital solutions built for ambitious brands.",
     images: ["/tagline4.png"],
