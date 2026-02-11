@@ -1,7 +1,7 @@
 import EcommerceSolutions from "@/components/ecommmerce-solutions";
 
 export const metadata = {
-  title: "E-commerce Solutions | Vertex Prime Digital",
+  title: "E-commerce Solutions in Lagos, Nigeria | Vertex Prime Digital",
   description:
     "Custom e-commerce website development by Vertex Prime Digital. We build secure, scalable, conversion-focused online stores that drive sales and business growth.",
   keywords: [

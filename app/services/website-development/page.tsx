@@ -1,7 +1,7 @@
 import WebsiteDevelopmentClient from "@/components/WebsiteDevelopmentClient";
 
 export const metadata = {
-  title: "Website Development | Vertex Prime Digital",
+  title: "Website Development in Lagos, Nigeria | Vertex Prime Digital",
   description:
     "High-performance, responsive website design and development services by Vertex Prime Digital. We build scalable, SEO-friendly, and user-centered websites for ambitious brands.",
   keywords: [

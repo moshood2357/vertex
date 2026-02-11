@@ -1,7 +1,7 @@
 import CustomDigitalSolutions from "@/components/custom-digital-solutions";
 
 export const metadata = {
-  title: "Custom Digital Solutions | Vertex Prime Digital",
+  title: "Custom Digital Solutions in Lagos, Nigeria | Vertex Prime Digital",
   description:
     "Vertex Prime Digital delivers tailored digital solutions including custom web applications, enterprise systems, SaaS platforms, and workflow automation designed to scale your business.",
   keywords: [

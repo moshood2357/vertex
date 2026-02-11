@@ -1,7 +1,7 @@
 import UiUxDesign from "@/components/UiUxDesign";
 
 export const metadata = {
-  title: "UI/UX Design Services | Vertex Prime Digital",
+  title: "UI/UX Design Services in Lagos, Nigeria | Vertex Prime Digital",
   description:
     "Professional UI/UX design services by Vertex Prime Digital. We design intuitive, user-centered digital experiences that improve engagement, usability, and conversions.",
   keywords: [
