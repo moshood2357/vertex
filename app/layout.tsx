@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "Vertex Prime Digital | Website Design, Development & Digital Solutions Agency",
+      "Vertex Prime Digital | Website Design and Development company in Lagos, Nigeria",
     template: "%s | Vertex Prime Digital",
   },
 
@@ -161,7 +161,10 @@ export default function RootLayout({
       "@type": "Place",
       address: {
         "@type": "PostalAddress",
+        streetAddress: "Lekki",
         addressLocality: "Lagos",
+        addressRegion: "Lagos",
+        postalCode: "105102",
         addressCountry: "NG",
       },
     },
@@ -173,6 +176,11 @@ export default function RootLayout({
       "@type": "PostalAddress",
       addressLocality: "Lagos",
       addressCountry: "NG",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "6.4698",
+      longitude: "3.5852",
     },
     contactPoint: [
       {
@@ -227,7 +235,7 @@ export default function RootLayout({
       "Web Development",
       "E-commerce Solutions",
       "Search Engine Optimization",
-      "Digital Marketing",
+      "Web Design",
       "IT Consulting",
       "Software Development",
     ],

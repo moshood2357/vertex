@@ -1,89 +1,17 @@
-import type { Metadata } from "next";
-import Script from "next/script";
+// import type { Metadata } from "next";
+// import Script from "next/script";
 import HomePage from "@/components/HomePage";
 
-const baseUrl = "https://www.vertexprimedigital.com";
+// const baseUrl = "https://www.vertexprimedigital.com";
 
-export const metadata: Metadata = {
-  title:
-    "Vertex Prime Digital | Web design, Development Company in Lagos, Nigeria",
-  description:
-    "Vertex Prime Digital is a Lagos-based web development company delivering high-performance websites, e-commerce platforms, SEO services, and scalable digital solutions for ambitious brands worldwide.",
-  keywords: [
-    "Web Development Company Lagos",
-     "web design and development agency",
-    "Website design and development company in nigeria",
-    "E-commerce Development Lagos",
-    "SEO Services Nigeria",
-    "Digital Agency Lagos",
-    "Custom Web Applications",
-    "Vertex Prime Digital",
-    "bespoke web development services",
-    "high performance website development services",
-    "scalable website development for growing businesses",
-    "premium ecommerce web design agency",
-    "custom ecommerce website development",
-  ],
-  authors: [{ name: "Vertex Prime Digital" }],
-  creator: "Vertex Prime Digital",
-  publisher: "Vertex Prime Digital",
-  metadataBase: new URL(baseUrl),
 
-  alternates: {
-    canonical: "/",
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-
-  openGraph: {
-    title: "Vertex Prime Digital | Web Development Company in Lagos",
-    description:
-      "We design and develop high-performance digital platforms engineered for scalability, conversions, and measurable ROI.",
-    url: baseUrl,
-    siteName: "Vertex Prime Digital",
-    locale: "en_NG",
-    type: "website",
-    images: [
-      {
-        url: `${baseUrl}/tagline1.png`,
-        width: 1200,
-        height: 630,
-        alt: "Vertex Prime Digital - Web Design & Development Agency",
-      },
-    ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Vertex Prime Digital | Web Development Lagos",
-    description:
-      "High-performance websites, e-commerce solutions, and digital growth strategies.",
-    images: [`${baseUrl}/tagline1.png`],
-  },
-
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
-};
 
 export default function Page() {
   return (
     <>
       {/* ================= Structured Data ================= */}
 
-      <Script
+      {/* <Script
         id="organization-schema"
         type="application/ld+json"
         strategy="afterInteractive"
@@ -95,7 +23,7 @@ export default function Page() {
             name: "Vertex Prime Digital",
             url: baseUrl,
             logo: `${baseUrl}/nakedlogo.png`,
-            image: `${baseUrl}/tagline1.png`,
+            image: `${baseUrl}/tagline4.png`,
             description:
               "A Lagos-based digital agency specializing in web development, e-commerce solutions, SEO, and scalable digital platforms.",
             address: {
@@ -132,7 +60,7 @@ export default function Page() {
             },
           }),
         }}
-      />
+      /> */}
 
       <HomePage />
     </>
