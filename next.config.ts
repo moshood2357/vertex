@@ -7,10 +7,10 @@ const nextConfig: NextConfig = {
 
   images: {
     formats: ["image/avif", "image/webp"], // Better SEO + performance
-    domains: [], 
+    domains: [],
   },
 
-  poweredByHeader: false, 
+  poweredByHeader: false,
 
   async headers() {
     return [
@@ -30,6 +30,23 @@ const nextConfig: NextConfig = {
             value: "strict-origin-when-cross-origin",
           },
         ],
+      },
+    ];
+  },
+
+  // ✅ Add this
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.vertexprimedigital.com",
+          },
+        ],
+        destination: "https://vertexprimedigital.com/:path*",
+        permanent: true,
       },
     ];
   },

@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.vertexprimedigital.com"),
+  metadataBase: new URL("https://vertexprimedigital.com"),
 
   title: {
     default:
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://www.vertexprimedigital.com",
+    canonical: "https://vertexprimedigital.com",
   },
 
   icons: {
@@ -129,7 +129,7 @@ export const metadata: Metadata = {
       "Vertex Prime Digital | Website Design, Development & Digital Solutions Agency",
     description:
       "Professional website development, e-commerce solutions, SEO, and digital systems built for performance, scalability, and measurable business growth.",
-    url: "https://www.vertexprimedigital.com",
+    url: "https://vertexprimedigital.com",
     siteName: "Vertex Prime Digital",
     images: [
       {
@@ -166,14 +166,15 @@ export default function RootLayout({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": ["Organization", "ProfessionalService"],
-    "@id": "https://www.vertexprimedigital.com/#organization",
+    "@id": "https://vertexprimedigital.com/#organization",
     name: "Vertex Prime Digital",
-    url: "https://www.vertexprimedigital.com",
-    logo: "https://www.vertexprimedigital.com/nakedlogo.png",
-    image: "https://www.vertexprimedigital.com/tagline4.png",
+    url: "https://vertexprimedigital.com",
+    logo: "https://vertexprimedigital.com/nakedlogo.png",
+    image: "https://vertexprimedigital.com/tagline4.png",
     description:
       "Vertex Prime Digital is a performance-driven web design and development agency delivering scalable digital systems, high-converting websites, and e-commerce platforms.",
     email: "contact@vertexprimedigital.com",
+    telephone: "+2349038979339",
     foundingLocation: {
       "@type": "Place",
       address: {
