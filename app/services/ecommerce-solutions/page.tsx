@@ -15,7 +15,7 @@ export const metadata = {
     title: "E-commerce Solutions | Vertex Prime Digital",
     description:
       "Professional e-commerce solutions designed for performance, security, and high conversions. Launch and scale your online store with confidence.",
-    url: "https://www.vertexprimedigital.com/services/ecommerce-solutions",
+    url: "https://vertexprimedigital.com/services/ecommerce-solutions",
     siteName: "Vertex Prime Digital",
     type: "website",
   },

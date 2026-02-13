@@ -15,7 +15,7 @@ export const metadata = {
     title: "Website Development | Vertex Prime Digital",
     description:
       "Professional website development services: scalable, SEO-friendly, responsive, and tailored for growth.",
-    url: "https://www.vertexprimedigital.com/services/website-development",
+    url: "https://vertexprimedigital.com/services/website-development",
     siteName: "Vertex Prime Digital",
     type: "website",
   },

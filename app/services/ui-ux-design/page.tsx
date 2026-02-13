@@ -16,7 +16,7 @@ export const metadata = {
     title: "UI/UX Design Services | Vertex Prime Digital",
     description:
       "We create modern, intuitive, and conversion-focused UI/UX designs that enhance user satisfaction and drive measurable business growth.",
-    url: "https://www.vertexprimedigital.com/services/ui-ux-design",
+    url: "https://vertexprimedigital.com/services/ui-ux-design",
     siteName: "Vertex Prime Digital",
     type: "website",
   },

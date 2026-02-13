@@ -16,7 +16,7 @@ export const metadata = {
     title: "Website Maintenance & Support | Vertex Prime Digital",
     description:
       "Reliable website maintenance and support services including updates, security monitoring, backups, and performance optimization.",
-    url: "https://www.vertexprimedigital.com/services/website-maintenance",
+    url: "https://vertexprimedigital.com/services/website-maintenance",
     siteName: "Vertex Prime Digital",
     type: "website",
   },

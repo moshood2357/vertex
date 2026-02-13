@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "Contact Vertex Prime Digital",
     description:
       "Start your project with Vertex Prime Digital. Professional web design, development, and digital solutions tailored to your business.",
-    url: "https://www.vertexprimedigital.com/contact-us",
+    url: "https://vertexprimedigital.com/contact-us",
     siteName: "Vertex Prime Digital",
     type: "website",
   },

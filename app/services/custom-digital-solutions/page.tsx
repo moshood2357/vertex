@@ -16,7 +16,7 @@ export const metadata = {
     title: "Custom Digital Solutions | Vertex Prime Digital",
     description:
       "Tailored digital systems and scalable web applications built to solve complex business challenges and accelerate growth.",
-    url: "https://www.vertexprimedigital.com/services/custom-digital-solutions",
+    url: "https://vertexprimedigital.com/services/custom-digital-solutions",
     siteName: "Vertex Prime Digital",
     type: "website",
   },

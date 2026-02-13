@@ -16,7 +16,7 @@ export const metadata = {
     title: "SEO & Website Optimization Services | Vertex Prime Digital",
     description:
       "Boost your visibility, rankings, and organic traffic with expert SEO and performance optimization services tailored for growing businesses.",
-    url: "https://www.vertexprimedigital.com/services/seo-optimization",
+    url: "https://vertexprimedigital.com/services/seo-optimization",
     siteName: "Vertex Prime Digital",
     type: "website",
   },

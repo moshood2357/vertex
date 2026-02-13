@@ -165,100 +165,125 @@ export default function RootLayout({
 }) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": ["Organization", "ProfessionalService"],
-    "@id": "https://vertexprimedigital.com/#organization",
-    name: "Vertex Prime Digital",
-    url: "https://vertexprimedigital.com",
-    logo: "https://vertexprimedigital.com/nakedlogo.png",
-    image: "https://vertexprimedigital.com/tagline4.png",
-    description:
-      "Vertex Prime Digital is a performance-driven web design and development agency delivering scalable digital systems, high-converting websites, and e-commerce platforms.",
-    email: "contact@vertexprimedigital.com",
-    telephone: "+2349038979339",
-    foundingLocation: {
-      "@type": "Place",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Lekki",
-        addressLocality: "Lagos",
-        addressRegion: "Lagos",
-        postalCode: "105102",
-        addressCountry: "NG",
-      },
-    },
-    areaServed: {
-      "@type": "Place",
-      name: "Worldwide",
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Lagos",
-      addressCountry: "NG",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: "6.4698",
-      longitude: "3.5852",
-    },
-    contactPoint: [
+    "@graph": [
       {
-        "@type": "ContactPoint",
+        "@type": "Organization",
+        "@id": "https://vertexprimedigital.com/#organization",
+        name: "Vertex Prime Digital",
+        url: "https://vertexprimedigital.com",
+        logo: "https://vertexprimedigital.com/nakedlogo.png",
+        image: "https://vertexprimedigital.com/tagline4.png",
+        description:
+          "Vertex Prime Digital is a performance-driven web design and development agency delivering scalable digital systems, high-converting websites, and e-commerce platforms.",
+        email: "contact@vertexprimedigital.com",
         telephone: "+2349038979339",
-        contactType: "customer support",
-        areaServed: "Worldwide",
-        availableLanguage: ["English"],
+        sameAs: [
+          "https://www.facebook.com/vertexprimedigital",
+          "https://twitter.com/VDigital20184",
+          "https://www.linkedin.com/company/vertexprimedigital",
+          "https://www.instagram.com/vertexprimedigital",
+        ],
       },
-    ],
-    sameAs: [
-      "https://www.facebook.com/vertexprimedigital",
-      "https://twitter.com/VDigital20184",
-      "https://www.linkedin.com/company/vertexprimedigital",
-      "https://www.instagram.com/vertexprimedigital",
-    ],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Digital Services",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Website Design & Development",
-          },
+
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://vertexprimedigital.com/#localbusiness",
+        name: "Vertex Prime Digital",
+        image: "https://vertexprimedigital.com/tagline4.png",
+        telephone: "+2349038979339",
+        email: "contact@vertexprimedigital.com",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Lekki",
+          addressLocality: "Lagos",
+          addressRegion: "Lagos",
+          postalCode: "105102",
+          addressCountry: "NG",
         },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "E-commerce Development",
-          },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: "6.4698",
+          longitude: "3.5852",
         },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "SEO Optimization",
+        areaServed: [
+          {
+            "@type": "Country",
+            name: "Nigeria",
           },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "IT Consulting",
+          {
+            "@type": "Place",
+            name: "Worldwide",
           },
+        ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+2349038979339",
+          contactType: "customer support",
+          areaServed: "Worldwide",
+          availableLanguage: ["English"],
         },
-      ],
-    },
-    knowsAbout: [
-      "Web Development",
-      "E-commerce Solutions",
-      "Search Engine Optimization",
-      "Web Design",
-      "IT Consulting",
-      "Software Development",
+        parentOrganization: {
+          "@id": "https://vertexprimedigital.com/#organization",
+        },
+      },
+
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://vertexprimedigital.com/#professionalservice",
+        name: "Web Design & Development Services",
+        provider: {
+          "@id": "https://vertexprimedigital.com/#organization",
+        },
+        areaServed: {
+          "@type": "Place",
+          name: "Worldwide",
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Digital Services",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Website Design & Development",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "E-commerce Development",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "SEO Optimization",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "IT Consulting",
+              },
+            },
+          ],
+        },
+        knowsAbout: [
+          "Web Development",
+          "E-commerce Solutions",
+          "Search Engine Optimization",
+          "Web Design",
+          "IT Consulting",
+          "Software Development",
+        ],
+      },
     ],
   };
-
+  
   return (
     <html lang="en">
       <body
