@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Phone } from "lucide-react";
+import { Phone, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -59,14 +59,29 @@ export default function Hero() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <Image
-            src="/landscape.png"
-            alt="Vertex Prime Digital web design and development"
-            width={650}
-            height={650}
-            priority
-            className="w-full max-w-md md:max-w-lg lg:max-w-xl rounded-2xl shadow-xl"
-          />
+          <div className="relative">
+            <Image
+              src="/landscape.png"
+              alt="Vertex Prime Digital web design and development"
+              width={650}
+              height={650}
+              priority
+              className="w-full max-w-md md:max-w-lg lg:max-w-xl rounded-2xl shadow-xl"
+            />
+
+            {/* Floating stats
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <Users className="h-6 w-6 text-green-600" />
+                </div>
+                <div>
+                  <p className="font-bold text-2xl text-gray-900">5+</p>
+                  <p className="text-sm text-gray-600">Happy Client</p>
+                </div>
+              </div>
+            </div> */}
+          </div>
         </motion.div>
       </div>
     </section>
