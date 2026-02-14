@@ -15,7 +15,7 @@ export default function TrustStrip() {
                     {[
                         { num: "5+", label: "Projects Delivered" },
                         { num: "98%", label: "Client Satisfaction" },
-                        { num: "Prompt", label: "Ongoing Support" },
+                        { num: "Prompt &", label: "Ongoing Support" },
                     ].map((item, idx) => (
                         <motion.div
                             key={idx}
