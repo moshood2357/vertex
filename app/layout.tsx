@@ -76,9 +76,9 @@ export const metadata: Metadata = {
     "Vertex Prime Digital",
     "professional web development",
     "website development",
-    "custom web solutions", 
-    "web design", 
-    "app design", 
+    "custom web solutions",
+    "web design",
+    "app design",
     "software development",
     "website design",
     "web development company",
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     "business website development",
     "tech company Nigeria",
     "Nigeria Web Developer",
-    "Web Developer Lagos"
+    "Web Developer Lagos",
   ],
 
   authors: [{ name: "Vertex Prime Digital" }],
@@ -145,7 +145,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Vertex Prime Digital | Website Design, Development & Digital Solutions Agency",
+    title:
+      "Vertex Prime Digital | Website Design, Development & Digital Solutions Agency",
     description:
       "Custom websites, scalable e-commerce platforms, SEO, and digital solutions built for ambitious brands.",
     images: ["/tagline4.png"],
@@ -283,7 +284,7 @@ export default function RootLayout({
       },
     ],
   };
-  
+
   return (
     <html lang="en">
       <body
