@@ -106,11 +106,21 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <Card className="p-0 border-border bg-card overflow-hidden shadow-lg">
+              <Card className="p-0 border-border bg-card mb-6 overflow-hidden shadow-lg">
                 <Image
                   src="/colabo.jpg"
                   width={300}
-                  height={470}
+                  height={650}
+                  alt="Vertex Prime Digital Team Collaborating"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </Card>
+
+              <Card className="p-0 border-border bg-card overflow-hidden shadow-lg">
+                <Image
+                  src="/yip.jpeg"
+                  width={300}
+                  height={650}
                   alt="Vertex Prime Digital Team Collaborating"
                   className="w-full h-full object-cover rounded-lg"
                 />
