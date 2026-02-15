@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { BsWhatsapp } from "react-icons/bs";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
 import Heading from "@/components/Heading";
@@ -193,7 +194,15 @@ export default function Contact() {
                   icon: Mail,
                   title: "Email",
                   content: "vertexprimedigital@gmail.com",
+                  href: "mailto:vertexprimedigital@gmail.com",
                   sub: "Response within 24 hours",
+                },
+                {
+                  icon: BsWhatsapp,
+                  title: "WhatsApp",
+                  content: "+234 903 897 9339",
+                  href: "https://wa.me/2349038979339",
+                  sub: "Chat with us anytime",
                 },
                 {
                   icon: MapPin,
@@ -216,7 +225,18 @@ export default function Contact() {
                         {item.title}
                       </h3>
                       <p className="text-[#1E3A8A] font-medium text-sm sm:text-base">
-                        {item.content}
+                        {item.href ? (
+                          <a
+                            href={item.href}
+                            className="hover:underline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {item.content}
+                          </a>
+                        ) : (
+                          item.content
+                        )}
                       </p>
                       <p className="text-xs text-slate-500 mt-1">{item.sub}</p>
                     </div>
