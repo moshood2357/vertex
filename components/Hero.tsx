@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Users } from "lucide-react";
+import { Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {

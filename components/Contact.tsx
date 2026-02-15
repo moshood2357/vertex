@@ -192,7 +192,7 @@ export default function Contact() {
                 {
                   icon: Mail,
                   title: "Email",
-                  content: "contact@vertexprimedigital.com",
+                  content: "vertexprimedigital@gmail.com",
                   sub: "Response within 24 hours",
                 },
                 {

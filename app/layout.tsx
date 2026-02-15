@@ -175,7 +175,7 @@ export default function RootLayout({
         image: "https://vertexprimedigital.com/tagline4.png",
         description:
           "Vertex Prime Digital is a performance-driven web design and development agency delivering scalable digital systems, high-converting websites, and e-commerce platforms.",
-        email: "contact@vertexprimedigital.com",
+        email: "vertexprimedigital@gmail.com",
         telephone: "+2349038979339",
         sameAs: [
           "https://www.facebook.com/vertexprimedigital",
@@ -191,7 +191,7 @@ export default function RootLayout({
         name: "Vertex Prime Digital",
         image: "https://vertexprimedigital.com/tagline4.png",
         telephone: "+2349038979339",
-        email: "contact@vertexprimedigital.com",
+        email: "vertexprimedigital@gmail.com",
         address: {
           "@type": "PostalAddress",
           streetAddress: "Lekki",
