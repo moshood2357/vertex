@@ -333,7 +333,7 @@ export default function RootLayout({
           src="https://tovik.app/tovik.js"
           type="module"
           strategy="afterInteractive"
-        />1
+        />
 
         {children}
         <Toaster position="top-right" richColors />
