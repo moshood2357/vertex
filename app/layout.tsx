@@ -329,15 +329,16 @@ export default function RootLayout({
           `}
         </Script>
 
+        {children}
+        <Toaster position="top-right" richColors />
+
+        
         <Script
           src="https://tovik.app/tovik.js"
           type="module"
           data-entity="a77e3f9e121f501477c182b89ecdf8ca"
           strategy="afterInteractive"
         />
-
-        {children}
-        <Toaster position="top-right" richColors />
       </body>
     </html>
   );
