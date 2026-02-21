@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "Vertex Prime Digital | Web Design and Development company in Lagos, Nigeria",
+      "Web Design and Development company in Lagos, Nigeria | Vertex Prime Digital",
     template: "%s | Vertex Prime Digital",
   },
 
