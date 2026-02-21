@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://vertexprimedigital.com"),
 
   title: {
-    default: "Web Design & Development in Lagos | Vertex Prime Digitalgit add",
+    default: "Web Design & Development in Lagos | Vertex Prime Digital",
     template: "%s | Vertex Prime Digital",
   },
 
