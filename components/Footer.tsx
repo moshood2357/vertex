@@ -211,6 +211,7 @@ function Footer() {
                   href="https://www.facebook.com/profile.php?id=61587406476323"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Visit our Facebook page"
                   className="bg-gray-800 p-3 rounded-full hover:bg-[#C6A75E] hover:text-black transition"
                 >
                   <FaFacebook size={18} />
@@ -220,6 +221,7 @@ function Footer() {
                   href="https://www.instagram.com/vertexprimedigital"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Visit our Instagram page"
                   className="bg-gray-800 p-3 rounded-full hover:bg-[#C6A75E] hover:text-black transition"
                 >
                   <FaInstagram size={18} />
@@ -229,6 +231,7 @@ function Footer() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Visit our LinkedIn page"
                   className="bg-gray-800 p-3 rounded-full hover:bg-[#C6A75E] hover:text-black transition"
                 >
                   <FaLinkedin size={18} />
@@ -238,6 +241,7 @@ function Footer() {
                   href="https://twitter.com/VDigital20184"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Visit our Twitter page"
                   className="bg-gray-800 p-3 rounded-full hover:bg-[#C6A75E] hover:text-black transition"
                 >
                   <FaTwitter size={18} />

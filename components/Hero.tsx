@@ -65,7 +65,7 @@ export default function Hero() {
               alt="Vertex Prime Digital web design and development"
               width={650}
               height={650}
-              priority
+              priority={true}
               className="w-full max-w-md md:max-w-lg lg:max-w-xl rounded-2xl shadow-xl"
             />
 

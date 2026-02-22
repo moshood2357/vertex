@@ -33,9 +33,9 @@ export default function TrustStrip() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.2 }}
               >
-                <h3 className="text-2xl font-semibold text-[#0B1F3B]">
+                <h2 className="text-2xl font-semibold text-[#0B1F3B]">
                   {item.num}
-                </h3>
+                </h2>
                 <p className="text-slate-600">{item.label}</p>
               </motion.div>
             ))}

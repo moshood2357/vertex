@@ -31,7 +31,7 @@ export default function Header() {
           <div className="text-2xl font-bold text-[#0B1F3B] flex items-center space-x-2">
             <Image
               src="/nakedlogo.png"
-              alt="PG Clean Ltd logo"
+              alt="Vertex Prime Digital logo"
               width={80}
               height={30}
             />
@@ -74,6 +74,7 @@ export default function Header() {
           <div className="md:hidden">
             <button
               className="text-[#0B1F3B]"
+              aria-label="Open navigation menu"
               onClick={() => setIsOpen(!isOpen)}
             >
               <svg

@@ -13,12 +13,14 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <Hero />
-      <TrustStrip />
-      <About />
-      <Services />
-      <WhyChooseUs />
-      <Cta />
+        <main className="min-h-screen">
+          <Hero />
+          <TrustStrip />
+          <About />
+          <Services />
+          <WhyChooseUs />
+          <Cta />
+        </main>
       <Footer />
     </>
   );
