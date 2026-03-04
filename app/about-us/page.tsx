@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AboutPage from "@/components/AboutPage";
 
 export const metadata: Metadata = {
-  title: "About Vertex Prime Digital | Web Design, Development & Digital Solutions",
+  title: "About Vertex Prime Digital",
   description:
     "Learn more about Vertex Prime Digital – a leading web design, development, and digital solutions company helping businesses grow online.",
   keywords: [

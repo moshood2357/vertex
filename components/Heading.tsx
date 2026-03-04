@@ -36,7 +36,7 @@ export default function Header() {
               height={30}
             />
             <Link href="/">
-              <h1>Vertex Prime Digital</h1>
+              <h2>Vertex Prime Digital</h2>
             </Link>
           </div>
 

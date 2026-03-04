@@ -13,6 +13,7 @@ import emailjs from "@emailjs/browser";
 import Heading from "@/components/Heading";
 import Footer from "@/components/Footer";
 
+
 export default function Contact() {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -67,6 +68,21 @@ export default function Contact() {
 
   return (
     <div className="relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            url: "https://vertexprimedigital.com/contact-us",
+            contactType: "customer support",
+            email: "vertexprimedigital@gmail.com",
+            telephone: "+2349038979339",
+            areaServed: "NG",
+            availableLanguage: ["English"],
+          }),
+        }}
+      />
       <Heading />
 
       <section className="relative py-20 md:py-40 bg-linear-to-br from-slate-50 via-white to-slate-100">
@@ -84,12 +100,16 @@ export default function Contact() {
             className="text-center mb-14 md:mb-20"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 tracking-tight">
-              Let’s Start Your Project
+              Get in touch with Vertex Prime Digital
             </h2>
 
             <p className="text-base sm:text-lg text-slate-600 max-w-xl md:max-w-2xl mx-auto leading-relaxed">
-              Tell us about your goals. We’ll provide clear direction, honest
-              advice, and a strategic path forward.
+              <p className="text-base sm:text-lg text-slate-600 max-w-xl md:max-w-2xl mx-auto leading-relaxed">
+                Have a project, question, or idea? Our team is ready to help you
+                transform your digital presence. Fill out the form below, or use
+                any of our contact channels. We respond promptly and are
+                committed to providing solutions that fit your business needs.
+              </p>
             </p>
           </motion.div>
 

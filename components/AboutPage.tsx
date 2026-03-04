@@ -4,13 +4,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Header from "@/components/Heading";
 import Footer from "@/components/Footer";
-
 import { Card } from "@/components/ui/card";
 
 export default function AboutPage() {
   return (
     <div>
-      {/* head section */}
+      {/* Head section */}
       <Header />
 
       <section className="py-48 bg-linear-to-r from-blue-50 via-white to-indigo-100 overflow-hidden min-h-screen">
@@ -27,10 +26,12 @@ export default function AboutPage() {
               About Vertex Prime Digital
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              At Vertex Prime Digital, we help businesses transform their
-              digital presence and leverage technology as a growth engine. From
-              web design and development to IT solutions and digital strategies,
-              we deliver innovative, scalable, and results-driven solutions.
+              Vertex Prime Digital is a technology-driven digital agency helping
+              startups, SMEs, and growing businesses build high-performance
+              websites and web applications that drive measurable growth. We
+              combine creative design, technical precision, and strategic
+              insight to transform your online presence into a powerful business
+              asset.
             </p>
           </motion.div>
 
@@ -49,33 +50,45 @@ export default function AboutPage() {
                   Our Story
                 </h3>
                 <p className="text-gray-600 mb-2">
-                  Vertex Prime Digital was founded to help businesses bridge the
-                  gap between vision and technology. We specialize in web
-                  design, development, and digital solutions that empower
-                  businesses to thrive online.
+                  Vertex Prime Digital was founded to bridge the gap between
+                  business vision and technology. We build websites and web
+                  applications that are not just visually stunning but also
+                  performance-optimized, scalable, and secure.
                 </p>
                 <p className="text-gray-600">
-                  Our team combines creativity, technical expertise, and
-                  strategic insight to deliver digital experiences that are not
-                  only visually stunning but also highly functional and
-                  performance-optimized.
+                  Our team blends creativity, technical expertise, and strategic
+                  insight to deliver digital experiences that empower businesses
+                  to thrive online.
                 </p>
               </Card>
 
               <Card className="p-6 border-border bg-card hover:shadow-lg transition-all duration-300">
                 <h3 className="text-2xl font-bold text-foreground mb-3">
-                  Our Mission & Vision
+                  Mission & Vision
                 </h3>
                 <p className="text-gray-600 mb-2">
                   <strong>Mission:</strong> To provide businesses with
-                  exceptional web and digital solutions that drive growth,
-                  engagement, and measurable results.
+                  high-performance digital solutions that increase visibility,
+                  engagement, and measurable growth.
                 </p>
                 <p className="text-gray-600">
-                  <strong>Vision:</strong> To be a leading digital partner
-                  recognized for innovation, reliability, and excellence in web
-                  development and digital solutions globally.
+                  <strong>Vision:</strong> To be a trusted digital growth
+                  partner recognized for innovation, reliability, and excellence
+                  in web development and digital strategy.
                 </p>
+              </Card>
+
+              <Card className="p-6 border-border bg-card hover:shadow-lg transition-all duration-300">
+                <h3 className="text-2xl font-bold text-foreground mb-3">
+                  What We Do
+                </h3>
+                <ul className="list-disc list-inside text-gray-600 space-y-2">
+                  <li>Custom Website Design & Development</li>
+                  <li>Conversion-Focused UI/UX Design</li>
+                  <li>SEO-Optimized Web Architecture</li>
+                  <li>Scalable Web Applications</li>
+                  <li>Business-Centered Digital Strategy</li>
+                </ul>
               </Card>
 
               <Card className="p-6 border-border bg-card hover:shadow-lg transition-all duration-300">
@@ -83,23 +96,19 @@ export default function AboutPage() {
                   Why Choose Vertex Prime Digital
                 </h3>
                 <ul className="list-disc list-inside text-gray-600 space-y-2">
+                  <li>Expertise in modern web technologies (React, Next.js)</li>
+                  <li>Performance-first development approach</li>
+                  <li>SEO-ready architecture from day one</li>
+                  <li>Secure, scalable, and reliable implementations</li>
                   <li>
-                    Expertise in web design, development, and digital strategy
+                    Strategy-driven solutions tailored to your business goals
                   </li>
-                  <li>
-                    Innovative and forward-thinking solutions tailored for your
-                    business
-                  </li>
-                  <li>Reliable, scalable, and secure implementations</li>
-                  <li>Client-focused approach with measurable results</li>
-                  <li>
-                    Serving startups, SMEs, and enterprise businesses globally
-                  </li>
+                  <li>Client-focused partnership mindset</li>
                 </ul>
               </Card>
             </motion.div>
 
-            {/* Image */}
+            {/* Images */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -121,7 +130,7 @@ export default function AboutPage() {
                   src="/yip.jpeg"
                   width={300}
                   height={650}
-                  alt="Vertex Prime Digital Team Collaborating"
+                  alt="Vertex Prime Digital Team Working"
                   className="w-full h-full object-cover rounded-lg"
                 />
               </Card>

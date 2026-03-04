@@ -1,7 +1,7 @@
 import UiUxDesign from "@/components/UiUxDesign";
 
 export const metadata = {
-  title: "UI/UX Design Services in Lagos, Nigeria | Vertex Prime Digital",
+  title: "UI/UX Design Services in Lagos",
   description:
     "Professional UI/UX design services by Vertex Prime Digital. We design intuitive, user-centered digital experiences that improve engagement, usability, and conversions.",
   keywords: [
@@ -13,7 +13,7 @@ export const metadata = {
     "Vertex Prime Digital UI UX",
   ],
   openGraph: {
-    title: "UI/UX Design Services | Vertex Prime Digital",
+    title: "UI/UX Design Services",
     description:
       "We create modern, intuitive, and conversion-focused UI/UX designs that enhance user satisfaction and drive measurable business growth.",
     url: "https://vertexprimedigital.com/services/ui-ux-design",
