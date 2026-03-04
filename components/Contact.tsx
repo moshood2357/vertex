@@ -99,9 +99,9 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14 md:mb-20"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 tracking-tight">
               Get in touch with Vertex Prime Digital
-            </h2>
+            </h1>
 
             <p className="text-base sm:text-lg text-slate-600 max-w-xl md:max-w-2xl mx-auto leading-relaxed">
               <p className="text-base sm:text-lg text-slate-600 max-w-xl md:max-w-2xl mx-auto leading-relaxed">
