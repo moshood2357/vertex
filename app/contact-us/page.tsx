@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Speak with our team about your website or digital project today.",
   },
   alternates: {
-    canonical: "https://www.vertexprimedigital.com/contact-us",
+    canonical: "https://vertexprimedigital.com/contact-us",
   },
 };
 

@@ -1,7 +1,7 @@
 import WebsiteMaintenance from "@/components/website-maintenance";
 
 export const metadata = {
-  title: "Website Maintenance & Support in Lagos",
+  title: "Website Maintenance & Support, Lagos",
   description:
     "Professional website maintenance services by Vertex Prime Digital. We provide security updates, performance optimization, backups, and ongoing technical support to keep your website secure and running smoothly.",
   keywords: [

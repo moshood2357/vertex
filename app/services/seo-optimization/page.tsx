@@ -1,7 +1,7 @@
 import SeoOptimization from "@/components/Seo-optimisation";
 
 export const metadata = {
-  title: "SEO & Website Optimization Services in Lagos",
+  title: "SEO & Web Optimization Service, Lagos",
   description:
     "Professional SEO and website optimization services by Vertex Prime Digital. We improve search rankings, increase organic traffic, and optimize website performance for measurable business growth.",
   keywords: [
