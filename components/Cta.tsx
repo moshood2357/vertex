@@ -21,11 +21,12 @@ export default function Cta() {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+          <h2 className="text-4xl font-extrabold mb-6 tracking-tight">
             Ready to Elevate Your Digital Presence?
           </h2>
           <p className="text-slate-300 mb-8 text-lg md:text-xl">
-            Partner with Vertex Prime Digital and position your brand at its peak.
+            Partner with Vertex Prime Digital — a trusted website design and web
+            development company in Lagos — and transform your digital presence.
           </p>
           <Link
             href="/contact-us"

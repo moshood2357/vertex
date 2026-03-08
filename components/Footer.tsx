@@ -100,7 +100,7 @@ function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Image
             src="/nakedlogo.png"
-            alt="Vertex Prime Digital logo"
+            alt="Vertex Prime Digital website design and web development company in Lagos Nigeria"
             width={60}
             height={30}
             className="mb-2"
@@ -114,8 +114,10 @@ function Footer() {
                 Reach Out to
               </h3>
               <p className="text-gray-300 mb-6 max-w-md">
-                We are here to help. Contact us for more information about our
-                services, to get involved, or to share your feedback.
+                Vertex Prime Digital is a professional website design and web
+                development company in Lagos, Nigeria helping businesses build
+                high-performance websites, ecommerce platforms, and
+                SEO-optimized digital solutions that drive growth online.
               </p>
 
               <div className="space-y-4">
@@ -258,7 +260,8 @@ function Footer() {
 
           <div className="border-t border-gray-700 mt-12 pt-8 text-center">
             <p className="text-gray-400">
-              Copyright © 2026 Vertex Prime Digital Ltd. All rights reserved.
+              Copyright © 2026 Vertex Prime Digital Ltd. — Global Web Design &
+              Development Company Based in Lagos, Nigeria
             </p>
             {/* <span>
               Developed by&nbsp;

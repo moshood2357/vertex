@@ -9,7 +9,6 @@ import { motion } from "framer-motion";
 export default function WhyChooseUs() {
   return (
     <>
-      
       {/* ================= WHY CHOOSE US ================= */}
       <section className="relative py-28 px-6 bg-linear-to-b from-[#0B1F3B] via-[#0F2A4D] to-[#0B1F3B] overflow-hidden">
         {/* Decorative Glow */}
@@ -33,8 +32,9 @@ export default function WhyChooseUs() {
             viewport={{ once: true }}
             className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed"
           >
-            We blend strategy, technology, and refined design to create digital
-            platforms engineered for performance and growth.
+            We combine modern website design, scalable development frameworks,
+            and data-driven SEO strategies to create high-performance digital
+            platforms for businesses across Lagos and Nigeria.
           </motion.p>
         </div>
 

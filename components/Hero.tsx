@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative bg-linear-to-b from-[#0B1F3B] via-[#0B1F3B]/95 to-[#0B1F3B] text-white overflow-hidden pt-24 md:pt-20">
-      {/* Animated Background Glow */}
       <motion.div
         className="absolute top-0 right-0 w-72 h-72 md:w-96 md:h-96 bg-[#C6A75E]/10 rounded-full blur-3xl -z-10"
         animate={{ rotate: 360 }}
@@ -16,7 +15,6 @@ export default function Hero() {
       />
 
       <div className="max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
-        {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,11 +26,13 @@ export default function Hero() {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-xl mx-auto md:mx-0">
-            We design and develop high-performance digital platforms that
-            position your business at the top of its industry.
+            Vertex Prime Digital is a global, professional website design and
+            web development company based in Lagos, Nigeria, delivering
+            responsive websites, ecommerce platforms, and SEO-optimized digital
+            solutions that help businesses grow, engage customers, and succeed
+            online.
           </p>
 
-          {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Link
               href="/contact-us"
@@ -51,7 +51,6 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right Image */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -59,29 +58,14 @@ export default function Hero() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <div className="relative">
-            <Image
-              src="/landscape.png"
-              alt="Vertex Prime Digital web design and development"
-              width={650}
-              height={650}
-              priority={true}
-              className="w-full max-w-md md:max-w-lg lg:max-w-xl rounded-2xl shadow-xl"
-            />
-
-            {/* Floating stats
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                  <Users className="h-6 w-6 text-green-600" />
-                </div>
-                <div>
-                  <p className="font-bold text-2xl text-gray-900">5+</p>
-                  <p className="text-sm text-gray-600">Happy Client</p>
-                </div>
-              </div>
-            </div> */}
-          </div>
+          <Image
+            src="/landscape.png"
+            alt="Website design and web development company in Lagos Nigeria"
+            width={650}
+            height={650}
+            priority
+            className="w-full max-w-md md:max-w-lg lg:max-w-xl rounded-2xl shadow-xl"
+          />
         </motion.div>
       </div>
     </section>

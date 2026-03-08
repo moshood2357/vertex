@@ -31,11 +31,11 @@ export default function Services() {
       desc: "Proactive monitoring, updates, and support to keep your digital assets secure and fast.",
       href: "/services/website-maintenance",
     },
-    // {
-    //   title: "Custom Digital Solutions",
-    //   desc: "Tailored digital systems designed around your operational and growth objectives.",
-    //   href: "/services/custom-digital-solutions",
-    // },
+    {
+      title: "Custom Digital Solutions",
+      desc: "Tailored digital systems designed around your operational and growth objectives.",
+      href: "/services/custom-digital-solutions",
+    },
   ];
 
   return (
@@ -59,8 +59,9 @@ export default function Services() {
             Our <span className="text-[#C6A75E]">Expertise</span>
           </h2>
           <p className="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">
-            We combine strategy, design, and engineering to deliver digital
-            solutions that drive measurable business growth.
+           As a leading web development company in Lagos, we deliver professional
+  website design, ecommerce development, SEO optimization, and custom
+  digital solutions that help businesses grow their online presence.
           </p>
         </motion.div>
 
