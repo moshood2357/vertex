@@ -8,6 +8,7 @@ import WhyChooseUs from "@/components/Why-choose-us";
 import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
 import TrustStrip from "./Trust-trip";
+import FAQ from "./FAQ";
 // import GoogleReviewsSection from "./ReviewsCarousel";
 
 export default function HomePage() {
@@ -21,6 +22,7 @@ export default function HomePage() {
           <Services />
           {/* <GoogleReviewsSection /> */}
           <WhyChooseUs />
+          <FAQ />
           <Cta />
         </main>
       <Footer />
