@@ -4,18 +4,18 @@ import { motion } from "framer-motion";
 
 const reviews = [
   {
-    name: "Toyin Owo",
-    initial: "T",
-    time: "a year ago",
+    name: "SolarSphere innovations",
+    initial: "S",
+    time: "3 months ago",
     review:
-      "AKOTECH Dynamics transformed our online presence, and we couldn’t be happier!",
+      "Great experience with Vertex Prime Digital! Their team was professional, responsive, and delivered exactly what they promised. Communication was smooth throughout, and I’m really satisfied with the final results. Highly recommend their services!",
   },
   {
-    name: "Salami Quayum",
+    name: "Alameen Lamidon",
     initial: "S",
-    time: "a year ago",
+    time: "4 months ago",
     review:
-      "They elevated our brand’s online reputation through exceptional branding.",
+      "I had an excellent experience working with this web design and development company. From the very beginning, their team demonstrated a strong understanding of my vision and turned it into a clean, modern, and highly functional website. They … ",
   },
   {
     name: "Afolabi Oluwaseun",
@@ -94,7 +94,7 @@ export default function GoogleReviewsSection() {
           </p>
 
           <a
-            href="https://g.page/r/CYRhmdn-GOJOEAE/review"
+            href="https://g.page/r/CYRhmdn-GOJOEAI/review"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition"

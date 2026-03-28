@@ -9,7 +9,7 @@ import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
 import TrustStrip from "./Trust-trip";
 import FAQ from "./FAQ";
-// import GoogleReviewsSection from "./ReviewsCarousel";
+import GoogleReviewsSection from "./ReviewsCarousel";
 
 export default function HomePage() {
   return (
@@ -20,7 +20,7 @@ export default function HomePage() {
           <TrustStrip />
           <About />
           <Services />
-          {/* <GoogleReviewsSection /> */}
+          <GoogleReviewsSection />
           <WhyChooseUs />
           <FAQ />
           <Cta />

@@ -177,7 +177,7 @@ function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/services"
+                    href="/service"
                     className="text-gray-300 hover:text-[#C6A75E] transition-colors duration-200"
                   >
                     Services
