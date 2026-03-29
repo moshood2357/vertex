@@ -5,6 +5,8 @@ import { Toaster } from "sonner";
 import "./globals.css";
 import TawkWidget from "@/components/TawkWidget";
 
+import WhatsAppButton from "@/components/WhatsAppButton";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -318,6 +320,9 @@ export default function RootLayout({
 
         {children}
         <Toaster position="top-right" richColors />
+
+        {/* WhatsApp Button */}
+        <WhatsAppButton />
 
         <Script
           id="tovik-loader"
