@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import TrustStrip from "./Trust-trip";
 import FAQ from "./FAQ";
 import GoogleReviewsSection from "./ReviewsCarousel";
+import LatestBlogSection from "./Read-our-blog";
 
 export default function HomePage() {
   return (
@@ -23,6 +24,7 @@ export default function HomePage() {
           <GoogleReviewsSection />
           <WhyChooseUs />
           <FAQ />
+          <LatestBlogSection />
           <Cta />
         </main>
       <Footer />
