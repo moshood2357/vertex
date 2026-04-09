@@ -213,8 +213,8 @@ export default function Contact() {
                 {
                   icon: Mail,
                   title: "Email",
-                  content: "vertexprimedigital@gmail.com",
-                  href: "mailto:vertexprimedigital@gmail.com",
+                  content: "info@vertexprimedigital.com",
+                  href: "mailto:info@vertexprimedigital.com",
                   sub: "Response within 24 hours",
                 },
                 {
