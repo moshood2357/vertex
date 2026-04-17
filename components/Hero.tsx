@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative bg-linear-to-b from-[#0B1F3B] via-[#0B1F3B]/95 to-[#0B1F3B] text-white overflow-hidden pt-24 md:pt-20">
+    <section className="relative bg-linear-to-b from-[#0B1F3B] via-[#0B1F3B]/95 to-[#0B1F3B] text-white overflow-hidden pt-20 md:pt-20">
       <motion.div
         className="absolute top-0 right-0 w-72 h-72 md:w-96 md:h-96 bg-[#C6A75E]/10 rounded-full blur-3xl -z-10"
         animate={{ rotate: 360 }}
@@ -22,23 +22,24 @@ export default function Hero() {
           className="text-center md:text-left"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            Web Design, Development & Digital Solutions for Ambitious Brands
+            Website Design & Development That Turns Ambitious Businesses Into
+            High-Converting Brands
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-xl mx-auto md:mx-0">
-            Vertex Prime Digital is a global, professional website design and
-            web development company based in Lagos, Nigeria, delivering
-            responsive websites, ecommerce platforms, and SEO-optimized digital
-            solutions that help businesses grow, engage customers, and succeed
-            online.
+            Vertex Prime Digital is a professional website design and web
+            development agency based in Lagos, Nigeria. We build fast,
+            responsive, and SEO-optimized websites, ecommerce platforms, and
+            digital solutions that help businesses attract customers, generate
+            leads, and increase sales online.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Link
-              href="/contact-us"
+              href="/website-design-and-development"
               className="bg-[#C6A75E] text-[#0B1F3B] px-6 py-3 font-semibold rounded-md text-center hover:scale-105 transition-transform duration-300"
             >
-              Request a Consultation
+              Get a Free Consultation
             </Link>
 
             <Link
@@ -46,7 +47,7 @@ export default function Hero() {
               className="border border-white px-6 py-3 rounded-md flex items-center justify-center gap-2 hover:bg-white hover:text-[#0B1F3B] transition duration-300"
             >
               <Phone size={18} />
-              Call Us Now
+              Call Now
             </Link>
           </div>
         </motion.div>

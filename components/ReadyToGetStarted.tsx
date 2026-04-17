@@ -6,14 +6,13 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { BsWhatsapp } from "react-icons/bs";
+import { Send } from "lucide-react";
+
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
-import Heading from "@/components/Heading";
 import Footer from "@/components/Footer";
 
-export default function Contact() {
+export default function ReadyToGetStarted() {
   const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -67,7 +66,7 @@ export default function Contact() {
 
   return (
     <div className="relative overflow-hidden">
-      <Heading />
+      
 
       <section className="relative py-20 md:py-40 bg-linear-to-br from-slate-50 via-white to-slate-100">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
@@ -160,85 +159,6 @@ export default function Contact() {
               </Card>
             </motion.div>
 
-            {/* CONTACT INFO */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="h-full flex flex-col gap-4 md:gap-6"
-            >
-              {[
-                {
-                  icon: Phone,
-                  title: "Call Us",
-                  content: "+234 903 897 9339",
-                },
-                {
-                  icon: Mail,
-                  title: "Email",
-                  content: "info@vertexprimedigital.com",
-                  href: "mailto:info@vertexprimedigital.com",
-                },
-                {
-                  icon: BsWhatsapp,
-                  title: "WhatsApp",
-                  content: "+234 903 897 9339",
-                  href: "https://wa.me/2349038979339",
-                },
-                {
-                  icon: MapPin,
-                  title: "Location",
-                  content: "Lekki, Lagos, Nigeria",
-                  isMap: true,
-                },
-              ].map((item, index) => (
-                <Card
-                  key={index}
-                  className={`p-5 sm:p-6 bg-white/90 backdrop-blur-lg rounded-2xl shadow-md border border-slate-200 flex flex-col ${
-                    item.isMap ? "flex-2" : "flex-1"
-                  }`}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-11 h-11 bg-blue-100 rounded-xl flex items-center justify-center">
-                      <item.icon className="w-5 h-5 text-blue-600" />
-                    </div>
-
-                    <div className="w-full">
-                      <h3 className="font-semibold text-slate-900 mb-1">
-                        {item.title}
-                      </h3>
-
-                      <p className="text-[#1E3A8A] font-medium text-sm">
-                        {item.href ? (
-                          <a
-                            href={item.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {item.content}
-                          </a>
-                        ) : (
-                          item.content
-                        )}
-                      </p>
-
-                      {/* MAP */}
-                      {item.isMap && (
-                        <div className="mt-4">
-                          <iframe
-                            className="w-full h-40 rounded-md"
-                            src="https://www.google.com/maps?q=Lekki+Lagos+Nigeria&z=12&output=embed"
-                            loading="lazy"
-                            title="map"
-                          />
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </motion.div>
           </div>
         </div>
       </section>
