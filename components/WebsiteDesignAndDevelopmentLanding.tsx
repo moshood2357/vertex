@@ -152,10 +152,10 @@ const WebsiteDesignLanding: React.FC = () => {
   }
 
   const inputFields = [
-    { name: "fullName", placeholder: "Your Full Name", icon: User },
+    { name: "name", placeholder: "Your Full Name", icon: User },
     { name: "companyName", placeholder: "Company Name", icon: Building },
-    { name: "businessEmail", placeholder: "Business Email", icon: Mail },
-    { name: "phoneNumber", placeholder: "Phone Number", icon: Phone },
+    { name: "email", placeholder: "Business Email", icon: Mail },
+    { name: "phone", placeholder: "Phone Number", icon: Phone },
   ];
 
   return (
