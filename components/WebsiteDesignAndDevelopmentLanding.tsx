@@ -145,7 +145,7 @@ const WebsiteDesignLanding: React.FC = () => {
             will reach out soon!
           </p>
 
-          <p className="text-sm text-gray-500">Urgent inquiries: 01452905204</p>
+          <p className="text-sm text-gray-500">Urgent inquiries: +2349038979339</p>
         </div>
       </div>
     );
