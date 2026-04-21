@@ -113,6 +113,17 @@ export default function WebsiteDesignAndDevelopment() {
                     Book Free Consultation
                   </Button>
                 </Link>
+
+                <Link href="/ROI/website-development-roi-calculator">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                  >
+                    <Database className="h-4 w-4 mr-2" />
+                    Calculate Website ROI
+                  </Button>
+                </Link>
                 <a
                   href="tel:+2349038979339"
                   className="text-2xl font-bold text-blue-600 hover:text-blue-800 flex items-center transition-colors"
