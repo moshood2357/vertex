@@ -24,20 +24,15 @@ export default function Header() {
   const services = [
     {
       icon: <Monitor className="h-5 w-5" />,
-      title: "Website Development",
-      description: "High-performance business websites.",
+      title: "Website Design & Development",
+      description:
+        "High-performance business websites that convert visitors into customers.",
       href: "/services/website-development",
-    },
-    {
-      icon: <Wifi className="h-5 w-5" />,
-      title: "Website Design",
-      description: "Modern, responsive UI designs.",
-      href: "/services/website-design",
     },
     {
       icon: <Shield className="h-5 w-5" />,
       title: "UI/UX Design",
-      description: "User-focused digital experiences.",
+      description: "Digital experiences designed around real user needs",
       href: "/services/ui-ux-design",
     },
     {
