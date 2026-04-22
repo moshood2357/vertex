@@ -176,7 +176,7 @@ const WebsiteDesignLanding: React.FC = () => {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  Website <span className="text-yellow-400">Development</span>
+                  Website <span className="text-yellow-400">Design & Development</span>
                 </h1>
 
                 <p className="text-xl text-indigo-100 mb-8">

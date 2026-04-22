@@ -7,7 +7,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Monitor,
-  Wifi,
   Shield,
   HardDrive,
   Cloud,

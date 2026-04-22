@@ -7,14 +7,13 @@ import { Button } from "../ui/button";
 import jsPDF from "jspdf";
 import Header from "../Heading";
 
-
 /* ================= TYPES ================= */
 
 type FormData = {
   companyName: string;
-  monthlyVisitors: string;
+  monthlyUsers: string;
   currentConversionRate: string;
-  avgOrderValue: string;
+  avgValuePerUser: string;
   expectedConversionIncrease: string;
   projectCost: string;
   timeline: string;
@@ -29,62 +28,56 @@ type Results = {
   timelineApplied: string;
 };
 
-/* ================= FIELDS CONFIG ================= */
+/* ================= FIELDS ================= */
 
-const fields: {
-  label: string;
-  name: keyof FormData;
-  placeholder: string;
-  tooltip: string;
-  type: "text" | "number";
-}[] = [
+const fields = [
   {
     label: "Company Name",
     name: "companyName",
     placeholder: "ABC Ltd",
-    tooltip: "Enter your business name. This will appear on your report.",
+    tooltip: "Your brand name (appears on report).",
     type: "text",
   },
   {
-    label: "Monthly Visitors",
-    name: "monthlyVisitors",
+    label: "Monthly Users",
+    name: "monthlyUsers",
     placeholder: "5000",
-    tooltip: "How many people visit your website each month?",
+    tooltip: "How many people visit or use your product each month?",
     type: "number",
   },
   {
     label: "Current Conversion Rate (%)",
     name: "currentConversionRate",
     placeholder: "2",
-    tooltip: "Out of 100 visitors, how many become customers?",
+    tooltip: "How many of your visitors actually take action (buy, sign up, etc.)?",
     type: "number",
   },
   {
-    label: "Average Order Value",
-    name: "avgOrderValue",
+    label: "Average Value Per User",
+    name: "avgValuePerUser",
     placeholder: "50",
-    tooltip: "Average amount a customer spends per order.",
+    tooltip: "How much revenue you typically earn from one customer.",
     type: "number",
   },
   {
-    label: "Expected Conversion Increase (%)",
+    label: "Expected UX Improvement (%)",
     name: "expectedConversionIncrease",
     placeholder: "1.5",
-    tooltip: "Expected improvement after redesign.",
+    tooltip: "How much better you expect conversions to become after improving your design.",
     type: "number",
   },
   {
-    label: "Project Cost",
+    label: "UI/UX Project Cost",
     name: "projectCost",
     placeholder: "3000",
-    tooltip: "Total cost of the website project.",
+    tooltip: "Total amount you plan to spend on the UI/UX design project.",
     type: "number",
   },
   {
     label: "Timeline (Years)",
     name: "timeline",
     placeholder: "2",
-    tooltip: "How long you want to measure ROI.",
+    tooltip: "How many years you want to measure the business impact.",
     type: "number",
   },
 ];
@@ -100,12 +93,12 @@ const currencySymbols: Record<string, string> = {
 
 /* ================= COMPONENT ================= */
 
-export default function WebsiteDevelopmentROICalculator() {
+export default function UIUXROICalculator() {
   const [formData, setFormData] = useState<FormData>({
     companyName: "",
-    monthlyVisitors: "",
+    monthlyUsers: "",
     currentConversionRate: "",
-    avgOrderValue: "",
+    avgValuePerUser: "",
     expectedConversionIncrease: "",
     projectCost: "",
     timeline: "",
@@ -116,22 +109,19 @@ export default function WebsiteDevelopmentROICalculator() {
   const [calculating, setCalculating] = useState(false);
   const [pdfLoading, setPdfLoading] = useState(false);
   const [locked, setLocked] = useState(false);
-
   const [reportCompanyName, setReportCompanyName] = useState("");
 
   /* ================= FORMAT ================= */
 
   const formatCurrency = (value: string) => {
-    const num = Number(value).toLocaleString();
-    return `${currencySymbols[formData.currency] || ""}${num}`;
+    return `${currencySymbols[formData.currency]}${Number(value).toLocaleString()}`;
   };
 
   const formatCurrencyPDF = (value: string) => {
-    const num = Number(value).toLocaleString();
-    return `${formData.currency} ${num}`;
+    return `${formData.currency} ${Number(value).toLocaleString()}`;
   };
 
-  /* ================= HANDLE CHANGE ================= */
+  /* ================= HANDLE ================= */
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
@@ -142,7 +132,7 @@ export default function WebsiteDevelopmentROICalculator() {
     }));
   };
 
-  /* ================= CALCULATION ================= */
+  /* ================= CALCULATE (UPGRADED MODEL) ================= */
 
   const calculateROI = (e: React.FormEvent) => {
     e.preventDefault();
@@ -150,33 +140,47 @@ export default function WebsiteDevelopmentROICalculator() {
 
     setReportCompanyName(formData.companyName);
 
-    const visitors = parseFloat(formData.monthlyVisitors) || 0;
+    const users = parseFloat(formData.monthlyUsers) || 0;
     const conversion = (parseFloat(formData.currentConversionRate) || 0) / 100;
-    const avgOrder = parseFloat(formData.avgOrderValue) || 0;
+    const avgValue = parseFloat(formData.avgValuePerUser) || 0;
 
+    // smarter UX uplift cap (more realistic)
     let increase = (parseFloat(formData.expectedConversionIncrease) || 0) / 100;
-    if (increase > 0.05) increase = 0.05;
+    increase = Math.min(increase, 0.03); // 3% cap instead of 5%
 
     const cost = parseFloat(formData.projectCost) || 0;
     const timeline = parseInt(formData.timeline) || 1;
 
     const profitMargin = 0.6;
 
-    const currentMonthly = visitors * conversion * avgOrder;
-    const projectedMonthly = visitors * (conversion + increase) * avgOrder;
+    const currentMonthly = users * conversion * avgValue;
+    const baseAnnual = currentMonthly * 12 * profitMargin;
 
-    const currentYearly = currentMonthly * 12 * profitMargin;
-    const projectedYearly = projectedMonthly * 12 * profitMargin;
+    /**
+     * IMPROVED MODEL:
+     * UX impact grows gradually over time (adoption curve)
+     */
+    let projectedAnnual = 0;
 
-    const additionalProfit = projectedYearly - currentYearly;
-    const totalProfit = additionalProfit * timeline;
+    for (let year = 1; year <= timeline; year++) {
+      const adoptionFactor = year / timeline; // gradual ramp-up
+      const adjustedConversion = conversion + increase * adoptionFactor;
 
-    const roi = cost > 0 ? totalProfit / cost : 0;
+      const yearlyRevenue =
+        users * adjustedConversion * avgValue * 12 * profitMargin;
+
+      projectedAnnual += yearlyRevenue;
+    }
+
+    const currentTotal = baseAnnual * timeline;
+    const additionalProfit = projectedAnnual - currentTotal;
+
+    const roi = cost > 0 ? additionalProfit / cost : 0;
 
     setTimeout(() => {
       setResults({
-        currentRevenue: currentYearly.toFixed(2),
-        projectedRevenue: projectedYearly.toFixed(2),
+        currentRevenue: currentTotal.toFixed(2),
+        projectedRevenue: projectedAnnual.toFixed(2),
         additionalRevenue: additionalProfit.toFixed(2),
         roiPercentage: roi.toFixed(1),
         timelineApplied: timeline.toString(),
@@ -184,18 +188,24 @@ export default function WebsiteDevelopmentROICalculator() {
 
       setCalculating(false);
       setLocked(true);
-
-      setFormData({
-        companyName: "",
-        monthlyVisitors: "",
-        currentConversionRate: "",
-        avgOrderValue: "",
-        expectedConversionIncrease: "",
-        projectCost: "",
-        timeline: "",
-        currency: formData.currency,
-      });
     }, 600);
+  };
+
+  /* ================= RESET ================= */
+
+  const resetCalculator = () => {
+    setLocked(false);
+    setResults(null);
+    setFormData({
+      companyName: "",
+      monthlyUsers: "",
+      currentConversionRate: "",
+      avgValuePerUser: "",
+      expectedConversionIncrease: "",
+      projectCost: "",
+      timeline: "",
+      currency: formData.currency,
+    });
   };
 
   /* ================= PDF ================= */
@@ -205,77 +215,37 @@ export default function WebsiteDevelopmentROICalculator() {
 
     setPdfLoading(true);
 
-    const pdf = new jsPDF("p", "pt", "a4");
-    const margin = 40;
-    let y = 50;
+    const pdf = new jsPDF();
+    let y = 40;
 
     pdf.setFontSize(18);
-    pdf.text("Vertex Prime Digital", margin, y);
-
-    y += 22;
-    pdf.setFontSize(12);
-    pdf.text("Website Design & Development ROI Report", margin, y);
-
-    y += 25;
-    pdf.setFontSize(10);
-    pdf.text(`Company: ${reportCompanyName || "N/A"}`, margin, y);
-
-    y += 15;
-    const now = new Date();
-    pdf.text(`Generated (Local): ${now.toLocaleString()}`, margin, y);
-
-    y += 15;
-    pdf.text(`Generated (UTC): ${now.toISOString()}`, margin, y);
+    pdf.text("Vertex Prime Digital", 40, y);
 
     y += 20;
-    pdf.line(margin, y, 550, y);
-
-    y += 30;
     pdf.setFontSize(12);
-    pdf.text("RESULTS", margin, y);
+    pdf.text("UI/UX Design ROI Report", 40, y);
 
     y += 20;
-    pdf.setFontSize(11);
+    pdf.text(`Company: ${reportCompanyName}`, 40, y);
 
+    y += 20;
     pdf.text(
       `Current Revenue: ${formatCurrencyPDF(results.currentRevenue)}`,
-      margin,
+      40,
       y,
     );
-    y += 16;
 
+    y += 15;
     pdf.text(
       `Projected Revenue: ${formatCurrencyPDF(results.projectedRevenue)}`,
-      margin,
+      40,
       y,
     );
-    y += 16;
 
-    pdf.text(
-      `Additional Revenue: ${formatCurrencyPDF(results.additionalRevenue)}`,
-      margin,
-      y,
-    );
-    y += 16;
+    y += 15;
+    pdf.text(`ROI: ${results.roiPercentage}%`, 40, y);
 
-    pdf.text(`ROI: ${results.roiPercentage}%`, margin, y);
-
-    const footerY = pdf.internal.pageSize.getHeight() - 50;
-
-    pdf.setFontSize(9);
-    pdf.setTextColor(120);
-    pdf.text("Call/WhatsApp: +2349038979339", margin, footerY);
-
-    pdf.setTextColor(0, 0, 255);
-    pdf.textWithLink("Visit: vertexprimedigital.com", margin, footerY + 12, {
-      url: "https://www.vertexprimedigital.com",
-    });
-
-    pdf.textWithLink("Book Free Consultation", margin, footerY + 26, {
-      url: "https://vertexprimedigital.com/website-design-and-development",
-    });
-
-    pdf.save("roi-report.pdf");
+    pdf.save("uiux-roi-report.pdf");
     setPdfLoading(false);
   };
 
@@ -285,18 +255,18 @@ export default function WebsiteDevelopmentROICalculator() {
     <>
       <Head>
         {/* Primary Meta Tags */}
-        <title>Web Development ROI Calculator | Vertex Prime Digital</title>
+        <title>UI/UX ROI Calculator | Vertex Prime Digital</title>
         <meta
           name="title"
-          content="Web Development ROI Calculator | Vertex Prime Digital"
+          content="UI/UX ROI Calculator | Vertex Prime Digital"
         />
         <meta
           name="description"
-          content="Estimate the ROI of your website investment with Vertex Prime Digital’s Web Development ROI Calculator. Measure cost vs value, track performance impact, and generate a downloadable report instantly."
+          content="Estimate the ROI of UI/UX design improvements with Vertex Prime Digital’s UI/UX ROI Calculator. Measure conversion uplift, revenue impact, and generate a professional report instantly."
         />
         <meta
           name="keywords"
-          content="Web Development ROI Calculator, Website ROI, Website Cost Calculator, Web Development Cost, Digital ROI, Business Website Value, Vertex Prime Digital"
+          content="UI UX ROI Calculator, UX ROI, UI Design ROI, UX Design Cost Calculator, Conversion Rate Optimization, Digital Product Design ROI, Vertex Prime Digital"
         />
         <meta name="author" content="Vertex Prime Digital" />
         <meta name="robots" content="index, follow" />
@@ -304,7 +274,7 @@ export default function WebsiteDevelopmentROICalculator() {
         {/* Canonical */}
         <link
           rel="canonical"
-          href="https://www.vertexprimedigital.com/web-development-roi-calculator"
+          href="https://www.vertexprimedigital.com/ui-ux-design-roi-calculator"
         />
 
         {/* Open Graph */}
@@ -312,15 +282,15 @@ export default function WebsiteDevelopmentROICalculator() {
         <meta property="og:site_name" content="Vertex Prime Digital" />
         <meta
           property="og:title"
-          content="Web Development ROI Calculator | Vertex Prime Digital"
+          content="UI/UX ROI Calculator | Vertex Prime Digital"
         />
         <meta
           property="og:description"
-          content="Calculate the return on investment of your website with Vertex Prime Digital’s Web Development ROI Calculator and get a professional report instantly."
+          content="Calculate the return on investment of UI/UX improvements with Vertex Prime Digital’s ROI Calculator and generate a professional report instantly."
         />
         <meta
           property="og:url"
-          content="https://www.vertexprimedigital.com/web-development-roi-calculator"
+          content="https://www.vertexprimedigital.com/ui-ux-design-roi-calculator"
         />
         <meta
           property="og:image"
@@ -331,11 +301,11 @@ export default function WebsiteDevelopmentROICalculator() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Web Development ROI Calculator | Vertex Prime Digital"
+          content="UI/UX ROI Calculator | Vertex Prime Digital"
         />
         <meta
           name="twitter:description"
-          content="Measure your website’s business impact and ROI with Vertex Prime Digital’s Web Development ROI Calculator."
+          content="Measure how UI/UX improvements impact revenue and conversions with Vertex Prime Digital’s ROI Calculator."
         />
         <meta
           name="twitter:image"
@@ -344,28 +314,25 @@ export default function WebsiteDevelopmentROICalculator() {
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+          </Head>
+          
 
       <Header />
 
-      <section className="min-h-screen bg-linear-to-b from-blue-50 to-white flex flex-col items-center justify-center px-4 py-32">
-        <Card className="w-full max-w-lg rounded-2xl shadow-2xl border bg-white">
+      <section className="min-h-screen flex items-center justify-center py-24 px-4 bg-gray-50">
+        <Card className="max-w-lg w-full shadow-2xl">
           <CardContent className="p-8">
             <h2 className="text-3xl font-bold text-center text-[#0B1F3B] mb-6">
-              Website ROI Calculator
+              UI/UX ROI Calculator
             </h2>
 
-            <form
-              onSubmit={calculateROI}
-              className="space-y-5"
-              id="roi-calculator"
-            >
+            <form onSubmit={calculateROI} className="space-y-5">
               <select
                 name="currency"
                 value={formData.currency}
                 onChange={handleChange}
                 disabled={locked}
-                className="w-full px-4 py-3 rounded-lg border"
+                className="w-full px-4 py-3 border rounded-lg"
               >
                 <option value="GBP">GBP (£)</option>
                 <option value="USD">USD ($)</option>
@@ -375,14 +342,19 @@ export default function WebsiteDevelopmentROICalculator() {
 
               {fields.map((f) => (
                 <div key={f.name} className="relative group">
+                  {/* LABEL ADDED HERE */}
+                  <label className="block text-sm font-medium mb-1 text-gray-700">
+                    {f.label}
+                  </label>
+
                   <input
                     type={f.type}
                     name={f.name}
-                    value={formData[f.name]}
+                    value={formData[f.name as keyof FormData]}
                     onChange={handleChange}
                     placeholder={f.placeholder}
                     disabled={locked}
-                    className="w-full px-4 py-3 rounded-lg border"
+                    className="w-full px-4 py-3 border rounded-lg"
                   />
 
                   <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 hidden group-hover:block bg-black text-white text-xs px-3 py-2 rounded w-64 text-center">
@@ -394,33 +366,39 @@ export default function WebsiteDevelopmentROICalculator() {
               <Button
                 type="submit"
                 disabled={calculating || locked}
-                className="w-full bg-[#C6A75E] hover:bg-[#B89A50] text-black px-8 py-3 text-lg rounded-md shadow-md transition"
+                className="w-full bg-[#C6A75E] text-[#0B1F3B]"
               >
                 {calculating ? "Calculating..." : "Calculate ROI"}
               </Button>
             </form>
 
+            {/* ================= RESULTS ================= */}
             {results && (
-              <div className="mt-6 p-5 bg-blue-50 rounded-xl text-center">
-                <p>Current Revenue: {formatCurrency(results.currentRevenue)}</p>
-                <p>
-                  Projected Revenue: {formatCurrency(results.projectedRevenue)}
-                </p>
-                <p>ROI: {results.roiPercentage}%</p>
+              <div className="mt-6 bg-gray-100 p-4 rounded text-center space-y-3">
+                <p>Current: {formatCurrency(results.currentRevenue)}</p>
+                <p>Projected: {formatCurrency(results.projectedRevenue)}</p>
+                <p className="font-bold">ROI: {results.roiPercentage}%</p>
+
+                <div className="flex flex-col gap-3 mt-4">
+                  <Button
+                    onClick={downloadPDF}
+                    disabled={pdfLoading}
+                    className="bg-green-600 text-white"
+                  >
+                    {pdfLoading ? "Generating..." : "Download PDF"}
+                  </Button>
+
+                  <Button
+                    onClick={resetCalculator}
+                    className="bg-gray-300 text-black"
+                  >
+                    Recalculate
+                  </Button>
+                </div>
               </div>
             )}
           </CardContent>
         </Card>
-
-        {results && (
-          <Button
-            onClick={downloadPDF}
-            disabled={pdfLoading}
-            className="mt-4 bg-green-600 text-white px-6 py-3"
-          >
-            {pdfLoading ? "Generating..." : "Download PDF"}
-          </Button>
-        )}
       </section>
     </>
   );

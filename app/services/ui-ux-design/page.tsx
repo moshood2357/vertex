@@ -1,21 +1,21 @@
-import UiUxDesign from "@/components/UiUxDesign";
+import UIUXDesignClient from "@/components/Ui-Ux-designClient";
 
 export const metadata = {
-  title: "UI/UX Design Services in Lagos",
+  title: "UI/UX Design in Lagos",
   description:
-    "Professional UI/UX design services by Vertex Prime Digital. We design intuitive, user-centered digital experiences that improve engagement, usability, and conversions.",
+    "Professional UI/UX design services by Vertex Prime Digital. We craft intuitive, user-centered digital experiences that improve engagement, conversions, and usability.",
   keywords: [
-    "UI UX design Lagos",
-    "user interface design Nigeria",
-    "user experience design services",
-    "website UI design",
-    "app UX design",
+    "UI UX design",
+    "UX designer Lagos",
+    "user interface design",
+    "user experience design",
+    "product design Nigeria",
     "Vertex Prime Digital UI UX",
   ],
   openGraph: {
-    title: "UI/UX Design Services",
+    title: "UI/UX Design",
     description:
-      "We create modern, intuitive, and conversion-focused UI/UX designs that enhance user satisfaction and drive measurable business growth.",
+      "User-focused UI/UX design services that enhance usability, engagement, and conversion rates.",
     url: "https://vertexprimedigital.com/services/ui-ux-design",
     siteName: "Vertex Prime Digital",
     type: "website",
@@ -23,5 +23,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <UiUxDesign />;
+  return <UIUXDesignClient />;
 }
