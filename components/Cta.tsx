@@ -32,7 +32,7 @@ export default function Cta() {
             href="/contact-us"
             className="bg-[#C6A75E] text-[#0B1F3B] px-8 py-4 rounded-md font-medium hover:scale-105 transition transform"
           >
-            Schedule a Consultation
+            Get a Free Consultation
           </Link>
         </motion.div>
       </section>

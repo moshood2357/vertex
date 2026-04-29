@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import WebsiteDevelopmentROICalculator from "@/components/ROICalculator/WebDevROI";
 import { Button } from "@/components/ui/button";

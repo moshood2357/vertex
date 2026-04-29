@@ -139,7 +139,7 @@ function Footer() {
                     // href="mailto:pgcleanlimited@gmail.com"
                     className="text-gray-300 hover:text-white transition"
                   >
-                    info@vertertexprimedigital.com
+                    info@vertexprimedigital.com
                   </a>
                 </div>
 

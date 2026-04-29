@@ -26,6 +26,7 @@ type Results = {
   additionalRevenue: string;
   roiPercentage: string;
   timelineApplied: string;
+  paybackYear?: string;
 };
 
 /* ================= FIELDS ================= */
@@ -49,7 +50,8 @@ const fields = [
     label: "Current Conversion Rate (%)",
     name: "currentConversionRate",
     placeholder: "2",
-    tooltip: "How many of your visitors actually take action (buy, sign up, etc.)?",
+    tooltip:
+      "How many of your visitors actually take action (buy, sign up, etc.)?",
     type: "number",
   },
   {
@@ -63,7 +65,8 @@ const fields = [
     label: "Expected UX Improvement (%)",
     name: "expectedConversionIncrease",
     placeholder: "1.5",
-    tooltip: "How much better you expect conversions to become after improving your design.",
+    tooltip:
+      "How much better you expect conversions to become after improving your design.",
     type: "number",
   },
   {
@@ -114,11 +117,25 @@ export default function UIUXROICalculator() {
   /* ================= FORMAT ================= */
 
   const formatCurrency = (value: string) => {
-    return `${currencySymbols[formData.currency]}${Number(value).toLocaleString()}`;
+    return `${currencySymbols[formData.currency]}${Number(
+      value,
+    ).toLocaleString()}`;
   };
 
   const formatCurrencyPDF = (value: string) => {
     return `${formData.currency} ${Number(value).toLocaleString()}`;
+  };
+
+  /* ================= HELPERS ================= */
+
+  const roiMultiple = results
+    ? (Number(results.roiPercentage) / 100).toFixed(1)
+    : null;
+
+  const getROILevel = (roi: number) => {
+    if (roi < 100) return "Moderate return";
+    if (roi < 500) return "Strong return";
+    return "High-impact opportunity";
   };
 
   /* ================= HANDLE ================= */
@@ -132,7 +149,7 @@ export default function UIUXROICalculator() {
     }));
   };
 
-  /* ================= CALCULATE (UPGRADED MODEL) ================= */
+  /* ================= CALCULATE ================= */
 
   const calculateROI = (e: React.FormEvent) => {
     e.preventDefault();
@@ -144,53 +161,71 @@ export default function UIUXROICalculator() {
     const conversion = (parseFloat(formData.currentConversionRate) || 0) / 100;
     const avgValue = parseFloat(formData.avgValuePerUser) || 0;
 
-    // smarter UX uplift cap (more realistic)
     let increase = (parseFloat(formData.expectedConversionIncrease) || 0) / 100;
-    increase = Math.min(increase, 0.03); // 3% cap instead of 5%
+    increase = Math.min(increase, 0.03);
 
     const cost = parseFloat(formData.projectCost) || 0;
     const timeline = parseInt(formData.timeline) || 1;
 
     const profitMargin = 0.6;
+    const trafficGrowthRate = 0.05;
+    const adoptionDelay = 0.6;
 
-    const currentMonthly = users * conversion * avgValue;
-    const baseAnnual = currentMonthly * 12 * profitMargin;
+    let currentTotal = 0;
+    let projectedTotal = 0;
+    let cumulativeProfit = 0;
 
-    /**
-     * IMPROVED MODEL:
-     * UX impact grows gradually over time (adoption curve)
-     */
-    let projectedAnnual = 0;
+    let currentUsers = users;
+
+    // ✅ NEW PAYBACK TRACKER
+    let paybackYear: string = "Not achieved";
+    let paybackFound = false;
 
     for (let year = 1; year <= timeline; year++) {
-      const adoptionFactor = year / timeline; // gradual ramp-up
+      currentUsers = currentUsers * (1 + trafficGrowthRate);
+
+      const adoptionFactor = Math.min(
+        1,
+        adoptionDelay + (year / timeline) * (1 - adoptionDelay),
+      );
+
       const adjustedConversion = conversion + increase * adoptionFactor;
 
-      const yearlyRevenue =
-        users * adjustedConversion * avgValue * 12 * profitMargin;
+      const currentYearRevenue =
+        currentUsers * conversion * avgValue * 12 * profitMargin;
 
-      projectedAnnual += yearlyRevenue;
+      const projectedYearRevenue =
+        currentUsers * adjustedConversion * avgValue * 12 * profitMargin;
+
+      currentTotal += currentYearRevenue;
+      projectedTotal += projectedYearRevenue;
+
+      cumulativeProfit += projectedYearRevenue - currentYearRevenue;
+
+      // 🔥 BREAK-EVEN DETECTION
+      if (!paybackFound && cumulativeProfit >= cost) {
+        paybackYear = `Year ${year}`;
+        paybackFound = true;
+      }
     }
 
-    const currentTotal = baseAnnual * timeline;
-    const additionalProfit = projectedAnnual - currentTotal;
-
+    const additionalProfit = projectedTotal - currentTotal;
     const roi = cost > 0 ? additionalProfit / cost : 0;
 
     setTimeout(() => {
       setResults({
         currentRevenue: currentTotal.toFixed(2),
-        projectedRevenue: projectedAnnual.toFixed(2),
+        projectedRevenue: projectedTotal.toFixed(2),
         additionalRevenue: additionalProfit.toFixed(2),
-        roiPercentage: roi.toFixed(1),
+        roiPercentage: (roi * 100).toFixed(1),
         timelineApplied: timeline.toString(),
+        paybackYear,
       });
 
       setCalculating(false);
       setLocked(true);
     }, 600);
   };
-
   /* ================= RESET ================= */
 
   const resetCalculator = () => {
@@ -215,37 +250,106 @@ export default function UIUXROICalculator() {
 
     setPdfLoading(true);
 
-    const pdf = new jsPDF();
-    let y = 40;
+    const pdf = new jsPDF("p", "pt", "a4");
+    const margin = 40;
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
 
+    let y = 50;
+
+    // ===== HEADER =====
+    pdf.setFont("helvetica", "bold");
     pdf.setFontSize(18);
-    pdf.text("Vertex Prime Digital", 40, y);
+    pdf.text("Vertex Prime Digital", margin, y);
 
-    y += 20;
+    y += 22;
+    pdf.setFont("helvetica", "normal");
     pdf.setFontSize(12);
-    pdf.text("UI/UX Design ROI Report", 40, y);
+    pdf.text("Website Design & Development ROI Report", margin, y);
+
+    // ===== META INFO =====
+    y += 25;
+    pdf.setFontSize(10);
+
+    pdf.text(`Company: ${reportCompanyName || "N/A"}`, margin, y);
+
+    y += 15;
+    const now = new Date();
+    pdf.text(`Generated (Local): ${now.toLocaleString()}`, margin, y);
+
+    y += 15;
+    pdf.text(`Generated (UTC): ${now.toISOString()}`, margin, y);
+
+    // ===== DIVIDER =====
+    y += 20;
+    pdf.setDrawColor(180);
+    pdf.line(margin, y, pageWidth - margin, y);
+
+    // ===== RESULTS =====
+    y += 30;
+    pdf.setFont("helvetica", "bold");
+    pdf.setFontSize(12);
+    pdf.text("RESULTS", margin, y);
 
     y += 20;
-    pdf.text(`Company: ${reportCompanyName}`, 40, y);
+    pdf.setFont("helvetica", "normal");
+    pdf.setFontSize(11);
 
-    y += 20;
     pdf.text(
       `Current Revenue: ${formatCurrencyPDF(results.currentRevenue)}`,
-      40,
+      margin,
       y,
     );
 
-    y += 15;
+    y += 16;
     pdf.text(
       `Projected Revenue: ${formatCurrencyPDF(results.projectedRevenue)}`,
-      40,
+      margin,
       y,
     );
 
-    y += 15;
-    pdf.text(`ROI: ${results.roiPercentage}%`, 40, y);
+    y += 16;
 
-    pdf.save("uiux-roi-report.pdf");
+    // Highlight additional revenue
+    pdf.setTextColor(0, 128, 0);
+    pdf.text(
+      `Additional Revenue: ${formatCurrencyPDF(results.additionalRevenue)}`,
+      margin,
+      y,
+    );
+
+    pdf.setTextColor(0, 0, 0);
+
+    y += 16;
+
+    // ROI emphasized slightly
+    pdf.setFont("helvetica", "bold");
+    pdf.text(`ROI: ${results.roiPercentage}%`, margin, y);
+
+    pdf.setFont("helvetica", "normal");
+
+    // ===== FOOTER =====
+    const footerY = pageHeight - 50;
+
+    pdf.setFontSize(9);
+    pdf.setTextColor(120);
+
+    pdf.text("Call/WhatsApp: +2349038979339", margin, footerY);
+
+    pdf.setTextColor(0, 0, 255);
+
+    pdf.textWithLink("Visit: vertexprimedigital.com", margin, footerY + 12, {
+      url: "https://www.vertexprimedigital.com",
+    });
+
+    pdf.textWithLink("Book Free Consultation", margin, footerY + 26, {
+      url: "https://vertexprimedigital.com/website-design-and-development",
+    });
+
+    // Reset color (important for future edits)
+    pdf.setTextColor(0, 0, 0);
+
+    pdf.save("roi-report.pdf");
     setPdfLoading(false);
   };
 
@@ -254,68 +358,8 @@ export default function UIUXROICalculator() {
   return (
     <>
       <Head>
-        {/* Primary Meta Tags */}
         <title>UI/UX ROI Calculator | Vertex Prime Digital</title>
-        <meta
-          name="title"
-          content="UI/UX ROI Calculator | Vertex Prime Digital"
-        />
-        <meta
-          name="description"
-          content="Estimate the ROI of UI/UX design improvements with Vertex Prime Digital’s UI/UX ROI Calculator. Measure conversion uplift, revenue impact, and generate a professional report instantly."
-        />
-        <meta
-          name="keywords"
-          content="UI UX ROI Calculator, UX ROI, UI Design ROI, UX Design Cost Calculator, Conversion Rate Optimization, Digital Product Design ROI, Vertex Prime Digital"
-        />
-        <meta name="author" content="Vertex Prime Digital" />
-        <meta name="robots" content="index, follow" />
-
-        {/* Canonical */}
-        <link
-          rel="canonical"
-          href="https://www.vertexprimedigital.com/ui-ux-design-roi-calculator"
-        />
-
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Vertex Prime Digital" />
-        <meta
-          property="og:title"
-          content="UI/UX ROI Calculator | Vertex Prime Digital"
-        />
-        <meta
-          property="og:description"
-          content="Calculate the return on investment of UI/UX improvements with Vertex Prime Digital’s ROI Calculator and generate a professional report instantly."
-        />
-        <meta
-          property="og:url"
-          content="https://www.vertexprimedigital.com/ui-ux-design-roi-calculator"
-        />
-        <meta
-          property="og:image"
-          content="https://www.vertexprimedigital.com/tagline.png"
-        />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="UI/UX ROI Calculator | Vertex Prime Digital"
-        />
-        <meta
-          name="twitter:description"
-          content="Measure how UI/UX improvements impact revenue and conversions with Vertex Prime Digital’s ROI Calculator."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.vertexprimedigital.com/tagline3.png"
-        />
-
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-          </Head>
-          
+      </Head>
 
       <Header />
 
@@ -342,7 +386,6 @@ export default function UIUXROICalculator() {
 
               {fields.map((f) => (
                 <div key={f.name} className="relative group">
-                  {/* LABEL ADDED HERE */}
                   <label className="block text-sm font-medium mb-1 text-gray-700">
                     {f.label}
                   </label>
@@ -372,12 +415,32 @@ export default function UIUXROICalculator() {
               </Button>
             </form>
 
-            {/* ================= RESULTS ================= */}
             {results && (
               <div className="mt-6 bg-gray-100 p-4 rounded text-center space-y-3">
                 <p>Current: {formatCurrency(results.currentRevenue)}</p>
                 <p>Projected: {formatCurrency(results.projectedRevenue)}</p>
-                <p className="font-bold">ROI: {results.roiPercentage}%</p>
+
+                <p className="text-green-700 font-medium">
+                  +{formatCurrency(results.additionalRevenue)} additional profit
+                </p>
+
+                <p className="font-bold text-lg text-[#0B1F3B]">
+                  ROI: {results.roiPercentage}% (₦{roiMultiple} earned per ₦1
+                  invested)
+                </p>
+
+                <p className="text-sm text-gray-600">
+                  {getROILevel(Number(results.roiPercentage))}
+                </p>
+
+                <p className="text-sm text-gray-600">
+                  Payback: {results.paybackYear}
+                </p>
+
+                <p className="text-xs text-gray-500 mt-2">
+                  This estimate assumes improved conversion performance and
+                  steady growth over the selected period.
+                </p>
 
                 <div className="flex flex-col gap-3 mt-4">
                   <Button
@@ -390,7 +453,7 @@ export default function UIUXROICalculator() {
 
                   <Button
                     onClick={resetCalculator}
-                    className="bg-gray-300 text-black"
+                    className="bg-[#C6A75E] text-black"
                   >
                     Recalculate
                   </Button>

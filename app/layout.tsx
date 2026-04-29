@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { Toaster } from "sonner";
@@ -18,6 +18,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
 });
+
+
+// Separate viewport export (required in Next.js 14+)
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://vertexprimedigital.com"),
@@ -99,11 +106,6 @@ export const metadata: Metadata = {
   creator: "Vertex Prime Digital",
   publisher: "Vertex Prime Digital",
 
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
-
   robots: {
     index: true,
     follow: true,
@@ -141,7 +143,7 @@ export const metadata: Metadata = {
         alt: "Vertex Prime Digital - Web Design & Development Agency",
       },
     ],
-    locale: "en_US",
+    locale: "en_NG",
     type: "website",
   },
 
@@ -282,6 +284,61 @@ export default function RootLayout({
           "Web Design",
           "IT Consulting",
           "Software Development",
+        ],
+      },
+
+      {
+        "@type": "FAQPage",
+        "@id": "https://vertexprimedigital.com/#faqpage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What services does Vertex Prime Digital offer?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Vertex Prime Digital provides professional website design, web development, UI/UX design, SEO optimization, and digital solutions that help businesses grow their online presence.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How long does it take to build a website?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "A basic website usually takes 5–10 days, corporate websites take 2–3 weeks, while e-commerce websites may take 3–4 weeks depending on complexity.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How much does a website cost in Nigeria?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Website pricing depends on the features and complexity of the project. Contact us for a custom quote based on your business needs.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Will my website be mobile friendly?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. All websites developed by Vertex Prime Digital are fully responsive and work perfectly on mobile phones, tablets, and desktop devices.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you provide SEO services in Lagos?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. We build websites with standard SEO optimization and offer dedicated SEO services to help your business appear on Google.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can you build an e-commerce website in Nigeria?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. We develop secure and scalable e-commerce websites that allow businesses to sell products online.",
+            },
+          },
         ],
       },
     ],

@@ -1,32 +1,41 @@
 import type { Metadata } from "next";
-
 import WebsiteDesignLanding from "@/components/WebsiteDesignAndDevelopmentLanding";
 
 export const metadata: Metadata = {
-  title: "Contact Vertex Prime Digital",
+  title: "Website Design & Development Services in Lagos, Nigeria",
   description:
-    "Get in touch with Vertex Prime Digital for professional web design, development, and digital solutions. Based in Lagos, Nigeria — serving clients worldwide.",
+    "Professional website design and development services by Vertex Prime Digital. We build fast, scalable, SEO-friendly websites for businesses in Lagos, Nigeria and worldwide.",
   keywords: [
-    "Contact Vertex Prime Digital",
-    "web development company Lagos",
-    "digital agency Nigeria",
-    "website design consultation",
-    "IT solutions Lagos",
-    "Vertex Prime Digital contact",
+    "website design and development Lagos",
+    "web design company Nigeria",
+    "website development agency Lagos",
+    "custom website design Nigeria",
+    "professional website development Lagos",
+    "Next.js web development Nigeria",
+    "responsive website design Lagos",
+    "affordable website design Nigeria",
   ],
   openGraph: {
-    title: "Contact Vertex Prime Digital",
+    title: "Website Design & Development Services in Lagos, Nigeria | Vertex Prime Digital",
     description:
-      "Start your project with Vertex Prime Digital. Professional web design, development, and digital solutions tailored to your business.",
+      "We build high-performance, scalable websites for businesses in Lagos and beyond. Get a fast, SEO-friendly website that drives real results.",
     url: "https://vertexprimedigital.com/website-design-and-development",
     siteName: "Vertex Prime Digital",
     type: "website",
+    images: [
+      {
+        url: "/tagline4.png",
+        width: 1200,
+        height: 630,
+        alt: "Website Design & Development Lagos — Vertex Prime Digital",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Vertex Prime Digital",
+    title: "Website Design & Development in Lagos | Vertex Prime Digital",
     description:
-      "Speak with our team about your website or digital project today.",
+      "Fast, scalable, SEO-friendly websites built for Lagos businesses and ambitious brands worldwide.",
   },
   alternates: {
     canonical: "https://vertexprimedigital.com/website-design-and-development",
