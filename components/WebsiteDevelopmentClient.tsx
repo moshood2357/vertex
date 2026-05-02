@@ -97,7 +97,7 @@ export default function WebsiteDesignAndDevelopment() {
                 </Badge>
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                Website Design & Development
+                Website <a href="/website-design-cost-nigeria" className="text-yellow-400 hover:text-yellow-600">Design</a> & Development
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Beautiful, fast, and functional websites designed to drive

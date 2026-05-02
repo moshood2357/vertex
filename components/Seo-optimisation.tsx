@@ -15,7 +15,7 @@ export default function SeoOptimization() {
       <Header />
 
       {/* ================= HERO ================= */}
-      <section className="bg-linear-to-br from-slate-50 to-blue-50 py-16 lg:py-24">
+      <section className="bg-linear-to-br from-slate-50 to-blue-50 py-20 lg:py-24">
         <div className="container mx-auto py-28 px-6 grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
@@ -36,7 +36,7 @@ export default function SeoOptimization() {
 
             <p className="text-xl text-gray-600 leading-relaxed">
               Improve your search rankings, drive organic traffic, and increase
-              conversions with strategic SEO and performance optimization.
+              conversions with strategic <a href="/seo-services-lagos" className="text-yellow-400">SEO</a> and performance optimization.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

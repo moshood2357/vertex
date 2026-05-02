@@ -162,7 +162,7 @@ const WebsiteDesignLanding: React.FC = () => {
     <div>
       <Header />
 
-      <div className="min-h-screen bg-linear-to-br from-indigo-900 via-purple-800 to-blue-900 py-20">
+      <div className="min-h-screen bg-linear-to-b from-[#0B1F3B] via-[#0B1F3B]/95 to-[#0B1F3B] py-20">
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <Back className="mt-5" />
 
@@ -176,12 +176,19 @@ const WebsiteDesignLanding: React.FC = () => {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  Website <span className="text-yellow-400">Design & Development</span>
+                  Website{" "}
+                  <span className="text-yellow-400">Design & Development</span>
                 </h1>
 
                 <p className="text-xl text-indigo-100 mb-8">
-                  We build powerful, scalable, and secure websites that drive
-                  business growth.
+                  We build powerful, scalable, and secure{" "}
+                  <a
+                    href="/web-design-lagos"
+                    className="text-yellow-400 hover:underline"
+                  >
+                    websites
+                  </a>{" "}
+                  that drive business growth.
                 </p>
               </div>
 
