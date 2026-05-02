@@ -40,3 +40,7 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
+}
