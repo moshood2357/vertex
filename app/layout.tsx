@@ -380,7 +380,7 @@ export default function RootLayout({
 
         {/* WhatsApp Button */}
         <WhatsAppButton />
-
+{/* 
         <Script
           id="tovik-loader"
           strategy="afterInteractive"
@@ -395,7 +395,7 @@ export default function RootLayout({
       })();
     `,
           }}
-        />
+        /> */}
       </body>
     </html>
   );
