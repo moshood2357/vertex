@@ -1,10 +1,11 @@
-import type { NextConfig } from "next";
 
+import type { NextConfig } from "next";
+ 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   compress: true,
   poweredByHeader: false,
-
+ 
   async headers() {
     return [
       {
@@ -17,7 +18,7 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-
+ 
   async redirects() {
     return [
       {
@@ -31,6 +32,23 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+ 
+  async rewrites() {
+    return [
+      {
+        // Proxy /blog to the Flask app on WhoGoHost. The Flask app now
+        // natively serves everything under /blog (url_prefix="/blog" +
+        // static_url_path="/blog/static"), so this is a straight 1:1
+        // pass-through — no path-stripping needed.
+        source: "/blog",
+        destination: "https://blog.vertexprimedigital.com/blog",
+      },
+      {
+        source: "/blog/:path*",
+        destination: "https://blog.vertexprimedigital.com/blog/:path*",
+      },
+    ];
+  },
 };
-
+ 
 export default nextConfig;
