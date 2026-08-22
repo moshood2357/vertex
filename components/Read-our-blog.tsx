@@ -59,9 +59,7 @@ export default function LatestBlogSection() {
           </motion.p>
 
           <motion.a
-            href="https://blog.vertexprimedigital.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/blog"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05 }}

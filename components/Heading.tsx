@@ -58,7 +58,7 @@ export default function Header() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about-us" },
     { name: "Contact", href: "/contact-us" },
-    { name: "Blog", href: "https://blog.vertexprimedigital.com" },
+    { name: "Blog", href: "/blog" },
   ];
 
   return (
