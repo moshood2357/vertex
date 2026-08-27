@@ -227,8 +227,7 @@ export default function Contact() {
                       {item.isMap && (
                         <div className="mt-4">
                           <iframe
-                            className="w-full h-40 rounded-md"
-                            src="https://www.google.com/maps?q=Lekki+Lagos+Nigeria&z=12&output=embed"
+                            className="https://www.google.com/maps/place/Vertex+Prime+Digital+Services+Limited/@6.2888087,3.3293148,9.53z/data=!4m6!3m5!1s0x6e0b6855f00996ef:0x4ee218fed9996184!8m2!3d6.5115886!4d3.7462206!16s%2Fg%2F11yz6vlzdc?entry=ttu&g_ep=EgoyMDI2MDgyNC4wIKXMDSoASAFQAw%3D%3D"
                             loading="lazy"
                             title="map"
                           />
