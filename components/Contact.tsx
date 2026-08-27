@@ -225,7 +225,7 @@ export default function Contact() {
 
                       {/* MAP */}
                       {item.isMap && (
-                        <div style={{ width: "100%", height: "450px" }}>
+                        <div className="mt-4">
                           <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d703582.0013323425!2d3.3293148202620153!3d6.288808691755373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6e0b6855f00996ef%3A0x4ee218fed9996184!2sVertex%20Prime%20Digital%20Services%20Limited!5e0!3m2!1sen!2sng!4v1787825601684!5m2!1sen!2sng"
                             width="100%"
