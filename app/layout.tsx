@@ -157,6 +157,12 @@ export const metadata: Metadata = {
   },
 
   category: "Digital Agency",
+  
+  verification: {
+    other: {
+      "google-adsense-account": "ca-pub-9440144286291878",
+    },
+  },
 
   other: {
     "theme-color": "#0B1F3B",
