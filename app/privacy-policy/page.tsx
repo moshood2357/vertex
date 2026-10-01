@@ -10,7 +10,6 @@ export default function PrivacyPolicyPage() {
       {/* head section */}
       <Header />
 
-
       <main className="bg-white">
         {/* HERO */}
         <section className="py-28 bg-linear-to-br from-slate-50 to-white">
@@ -38,12 +37,12 @@ export default function PrivacyPolicyPage() {
                 1. Introduction
               </h2>
               <p>
-                Vertex Prime Digital (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &rdquo;us&rdquo;) is committed to protecting
-                your privacy and handling your personal information with
-                transparency and integrity. This Privacy Policy explains how we
-                collect, use, disclose, and safeguard your information when you
-                visit our website or engage our web design and development
-                services.
+                Vertex Prime Digital (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or
+                &rdquo;us&rdquo;) is committed to protecting your privacy and
+                handling your personal information with transparency and
+                integrity. This Privacy Policy explains how we collect, use,
+                disclose, and safeguard your information when you visit our
+                website or engage our web design and development services.
               </p>
             </div>
 
@@ -178,7 +177,34 @@ export default function PrivacyPolicyPage() {
               <p>
                 Our website may use cookies and similar technologies to enhance
                 functionality, analyse traffic, and improve user experience. You
-                may control cookie preferences through your browser settings.
+                may control cookie preferences through your browser settings.{" "}
+                <br />
+                <br />
+                We may use Google AdSense to display advertisements on our
+                website. Google, as a third-party vendor, uses cookies to serve
+                ads based on a user&apos;s prior visits to this website or other
+                websites. Google&apos;s use of advertising cookies enables it
+                and its partners to serve ads based on your visit to this site
+                and/or other sites on the Internet. <br />
+                <br />
+                You may opt out of personalized advertising by visiting{" "}
+                <a
+                  href="https://adssettings.google.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Google ads settings
+                </a>
+                . Alternatively, you can opt out of a third-party vendor&apos;s
+                use of cookies for personalized advertising by visiting{" "}
+                <a
+                  href="https://www.aboutads.info/choices/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  www.aboutads.info
+                </a>
+                .
               </p>
             </div>
 
@@ -207,7 +233,7 @@ export default function PrivacyPolicyPage() {
               <p className="mt-4 font-semibold">
                 Vertex Prime Digital
                 <br />
-                Email: contact@vertexprimedigital.com
+                Email: info@vertexprimedigital.com
                 <br />
                 Website: www.vertexprimedigital.com
               </p>
